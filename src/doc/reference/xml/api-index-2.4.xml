@@ -1,0 +1,15 @@
+<indexdiv>
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="gnome-authentication-manager-init"><link linkend="gnome-authentication-manager-init">gnome_authentication_manager_init</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-icon-entry-set-max-saved"><link linkend="gnome-icon-entry-set-max-saved">gnome_icon_entry_set_max_saved</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-get-domain"><link linkend="gnome-password-dialog-get-domain">gnome_password_dialog_get_domain</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-get-password"><link linkend="gnome-password-dialog-get-password">gnome_password_dialog_get_password</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-get-username"><link linkend="gnome-password-dialog-get-username">gnome_password_dialog_get_username</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-new"><link linkend="gnome-password-dialog-new">gnome_password_dialog_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-run-and-block"><link linkend="gnome-password-dialog-run-and-block">gnome_password_dialog_run_and_block</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-set-domain"><link linkend="gnome-password-dialog-set-domain">gnome_password_dialog_set_domain</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-set-password"><link linkend="gnome-password-dialog-set-password">gnome_password_dialog_set_password</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-set-readonly-username"><link linkend="gnome-password-dialog-set-readonly-username">gnome_password_dialog_set_readonly_username</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-set-username"><link linkend="gnome-password-dialog-set-username">gnome_password_dialog_set_username</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

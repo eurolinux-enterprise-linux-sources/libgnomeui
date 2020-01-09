@@ -1,0 +1,346 @@
+<refentry id="GnomeIconTextItem">
+<refmeta>
+<refentrytitle role="top_of_page" id="GnomeIconTextItem.top_of_page">GnomeIconTextItem</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeIconTextItem</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GnomeIconTextItem.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+                    <link linkend="GnomeIconTextItem-struct">GnomeIconTextItem</link>;
+<link linkend="void">void</link>                <link linkend="gnome-icon-text-item-configure">gnome_icon_text_item_configure</link>      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         const <link linkend="char">char</link> *fontname,
+                                                         const <link linkend="char">char</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> is_editable,
+                                                         <link linkend="gboolean">gboolean</link> is_static);
+<link linkend="void">void</link>                <link linkend="gnome-icon-text-item-setxy">gnome_icon_text_item_setxy</link>          (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y);
+<link linkend="void">void</link>                <link linkend="gnome-icon-text-item-select">gnome_icon_text_item_select</link>         (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="gboolean">gboolean</link> sel);
+<link linkend="void">void</link>                <link linkend="gnome-icon-text-item-focus">gnome_icon_text_item_focus</link>          (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="gboolean">gboolean</link> focused);
+const <link linkend="char">char</link> *        <link linkend="gnome-icon-text-item-get-text">gnome_icon_text_item_get_text</link>       (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti);
+<link linkend="void">void</link>                <link linkend="gnome-icon-text-item-start-editing">gnome_icon_text_item_start_editing</link>  (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti);
+<link linkend="void">void</link>                <link linkend="gnome-icon-text-item-stop-editing">gnome_icon_text_item_stop_editing</link>   (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="gboolean">gboolean</link> accept);
+<link linkend="GtkEditable">GtkEditable</link> *       <link linkend="gnome-icon-text-item-get-editable">gnome_icon_text_item_get_editable</link>   (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GnomeIconTextItem.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GnomeCanvasItem">GnomeCanvasItem</link>
+                     +----GnomeIconTextItem
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+<refsect1 id="GnomeIconTextItem.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GnomeIconTextItem-editing-started">editing-started</link>&quot;                                : Run Last
+  &quot;<link linkend="GnomeIconTextItem-editing-stopped">editing-stopped</link>&quot;                                : Run Last
+  &quot;<link linkend="GnomeIconTextItem-height-changed">height-changed</link>&quot;                                 : Run Last
+  &quot;<link linkend="GnomeIconTextItem-selection-started">selection-started</link>&quot;                              : Run First
+  &quot;<link linkend="GnomeIconTextItem-selection-stopped">selection-stopped</link>&quot;                              : Run First
+  &quot;<link linkend="GnomeIconTextItem-text-changed">text-changed</link>&quot;                                   : Run Last
+  &quot;<link linkend="GnomeIconTextItem-width-changed">width-changed</link>&quot;                                  : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GnomeIconTextItem.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GnomeIconTextItem.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomeIconTextItem-struct" role="struct">
+<title>GnomeIconTextItem</title>
+<indexterm zone="GnomeIconTextItem-struct" role="deprecated"><primary sortas="GnomeIconTextItem">GnomeIconTextItem</primary></indexterm><programlisting>typedef struct _GnomeIconTextItem GnomeIconTextItem;</programlisting>
+<warning><para><literal>GnomeIconTextItem</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-icon-text-item-configure" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_configure ()</title>
+<indexterm zone="gnome-icon-text-item-configure" role="deprecated"><primary sortas="gnome_icon_text_item_configure">gnome_icon_text_item_configure</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_icon_text_item_configure      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         const <link linkend="char">char</link> *fontname,
+                                                         const <link linkend="char">char</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> is_editable,
+                                                         <link linkend="gboolean">gboolean</link> is_static);</programlisting>
+<warning><para><literal>gnome_icon_text_item_configure</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This routine is used to configure a &amp;GnomeIconTextItem.
+</para>
+<para>
+<parameter>x</parameter> and <parameter>y</parameter> specify the cordinates where the item is placed inside the canvas.
+The <parameter>x</parameter> coordinate should be the leftmost position that the icon text item can
+assume at any one time, that is, the left margin of the column in which the
+icon is to be placed.  The <parameter>y</parameter> coordinate specifies the top of the icon text
+item.
+</para>
+<para>
+<parameter>width</parameter> is the maximum width allowed for this icon text item.  The coordinates
+define the upper-left corner of an icon text item with maximum width; this may
+actually be outside the bounding box of the item if the text is narrower than
+the maximum width.
+</para>
+<para>
+If <parameter>is_static</parameter> is true, it means that there is no need for the item to
+allocate memory for the string (it is a guarantee that the text is allocated
+by the caller and it will not be deallocated during the lifetime of this
+item).  This is an optimization to reduce memory usage for large icon sets.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara> An icon text item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> X position in which to place the item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> Y position in which to place the item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> Maximum width allowed for this item, to be used for word wrapping.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fontname</parameter>&#160;:</term>
+<listitem><simpara> Ignored.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> Text that is going to be displayed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>is_editable</parameter>&#160;:</term>
+<listitem><simpara> Deprecated.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>is_static</parameter>&#160;:</term>
+<listitem><simpara> Whether <parameter>text</parameter> points to a static string or not.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-icon-text-item-setxy" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_setxy ()</title>
+<indexterm zone="gnome-icon-text-item-setxy" role="deprecated"><primary sortas="gnome_icon_text_item_setxy">gnome_icon_text_item_setxy</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_icon_text_item_setxy          (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y);</programlisting>
+<warning><para><literal>gnome_icon_text_item_setxy</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the coordinates at which the icon text item should be placed.
+</para>
+<para>
+See also: <link linkend="gnome-icon-text-item-configure"><function>gnome_icon_text_item_configure()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara>  An icon text item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> X position.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> Y position.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-icon-text-item-select" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_select ()</title>
+<indexterm zone="gnome-icon-text-item-select" role="deprecated"><primary sortas="gnome_icon_text_item_select">gnome_icon_text_item_select</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_icon_text_item_select         (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="gboolean">gboolean</link> sel);</programlisting>
+<warning><para><literal>gnome_icon_text_item_select</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This function is used to control whether an icon text item is displayed as
+selected or not.  Mouse events are ignored by the item when it is unselected;
+when the user clicks on a selected icon text item, it will start the text
+editing process.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara> An icon text item
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sel</parameter>&#160;:</term>
+<listitem><simpara> Whether the icon text item should be displayed as selected.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-icon-text-item-focus" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_focus ()</title>
+<indexterm zone="gnome-icon-text-item-focus" role="deprecated"><primary sortas="gnome_icon_text_item_focus">gnome_icon_text_item_focus</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_icon_text_item_focus          (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="gboolean">gboolean</link> focused);</programlisting>
+<warning><para><literal>gnome_icon_text_item_focus</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets or unsets the focus on the icon text item depending on <parameter>focused</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara>  An icon text item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>focused</parameter>&#160;:</term>
+<listitem><simpara> whether to set or unset the icon text item focus.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-icon-text-item-get-text" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_get_text ()</title>
+<indexterm zone="gnome-icon-text-item-get-text" role="deprecated"><primary sortas="gnome_icon_text_item_get_text">gnome_icon_text_item_get_text</primary></indexterm><programlisting>const <link linkend="char">char</link> *        gnome_icon_text_item_get_text       (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti);</programlisting>
+<warning><para><literal>gnome_icon_text_item_get_text</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara> An icon text item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the current text string in an icon text item.  The client should not
+free this string, as it is internal to the icon text item.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-icon-text-item-start-editing" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_start_editing ()</title>
+<indexterm zone="gnome-icon-text-item-start-editing" role="deprecated"><primary sortas="gnome_icon_text_item_start_editing">gnome_icon_text_item_start_editing</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_icon_text_item_start_editing  (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti);</programlisting>
+<warning><para><literal>gnome_icon_text_item_start_editing</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Starts the editing state of an icon text item.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara> An icon text item.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-icon-text-item-stop-editing" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_stop_editing ()</title>
+<indexterm zone="gnome-icon-text-item-stop-editing" role="deprecated"><primary sortas="gnome_icon_text_item_stop_editing">gnome_icon_text_item_stop_editing</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_icon_text_item_stop_editing   (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti,
+                                                         <link linkend="gboolean">gboolean</link> accept);</programlisting>
+<warning><para><literal>gnome_icon_text_item_stop_editing</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Terminates the editing state of an icon text item.  The <parameter>accept</parameter> argument
+controls whether the item's current text should be accepted or discarded.  If
+it is discarded, then the icon's original text will be restored.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara> An icon text item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>accept</parameter>&#160;:</term>
+<listitem><simpara> Whether to accept the current text or to discard it.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-icon-text-item-get-editable" role="function" condition="deprecated:">
+<title>gnome_icon_text_item_get_editable ()</title>
+<indexterm zone="gnome-icon-text-item-get-editable" role="deprecated"><primary sortas="gnome_icon_text_item_get_editable">gnome_icon_text_item_get_editable</primary></indexterm><programlisting><link linkend="GtkEditable">GtkEditable</link> *       gnome_icon_text_item_get_editable   (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *iti);</programlisting>
+<warning><para><literal>gnome_icon_text_item_get_editable</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Retrieves the entry widget associated with the icon text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iti</parameter>&#160;:</term>
+<listitem><simpara> An icon text item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GtkEditable"><type>GtkEditable</type></link> if the entry widget is initialised, NULL otherwise.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+<refsect1 id="GnomeIconTextItem.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GnomeIconTextItem-editing-started" role="signal"><title>The <literal>&quot;editing-started&quot;</literal> signal</title>
+<indexterm zone="GnomeIconTextItem-editing-started"><primary sortas="GnomeIconTextItem::editing-started">GnomeIconTextItem::editing-started</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *icontextitem,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)         : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icontextitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeIconTextItem-editing-stopped" role="signal"><title>The <literal>&quot;editing-stopped&quot;</literal> signal</title>
+<indexterm zone="GnomeIconTextItem-editing-stopped"><primary sortas="GnomeIconTextItem::editing-stopped">GnomeIconTextItem::editing-stopped</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *icontextitem,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)         : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icontextitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeIconTextItem-height-changed" role="signal"><title>The <literal>&quot;height-changed&quot;</literal> signal</title>
+<indexterm zone="GnomeIconTextItem-height-changed"><primary sortas="GnomeIconTextItem::height-changed">GnomeIconTextItem::height-changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *icontextitem,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)         : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icontextitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeIconTextItem-selection-started" role="signal"><title>The <literal>&quot;selection-started&quot;</literal> signal</title>
+<indexterm zone="GnomeIconTextItem-selection-started"><primary sortas="GnomeIconTextItem::selection-started">GnomeIconTextItem::selection-started</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *icontextitem,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)         : Run First</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icontextitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeIconTextItem-selection-stopped" role="signal"><title>The <literal>&quot;selection-stopped&quot;</literal> signal</title>
+<indexterm zone="GnomeIconTextItem-selection-stopped"><primary sortas="GnomeIconTextItem::selection-stopped">GnomeIconTextItem::selection-stopped</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *icontextitem,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)         : Run First</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icontextitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeIconTextItem-text-changed" role="signal"><title>The <literal>&quot;text-changed&quot;</literal> signal</title>
+<indexterm zone="GnomeIconTextItem-text-changed"><primary sortas="GnomeIconTextItem::text-changed">GnomeIconTextItem::text-changed</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            user_function                      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *icontextitem,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)         : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icontextitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeIconTextItem-width-changed" role="signal"><title>The <literal>&quot;width-changed&quot;</literal> signal</title>
+<indexterm zone="GnomeIconTextItem-width-changed"><primary sortas="GnomeIconTextItem::width-changed">GnomeIconTextItem::width-changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeIconTextItem">GnomeIconTextItem</link> *icontextitem,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)         : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icontextitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

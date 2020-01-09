@@ -1,0 +1,458 @@
+<refentry id="libgnomeui-gnome-app-util">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgnomeui-gnome-app-util.top_of_page">gnome-app-util</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>gnome-app-util</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgnomeui-gnome-app-util.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-message">gnome_app_message</link>                   (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *message);
+<link linkend="void">void</link>                <link linkend="gnome-app-flash">gnome_app_flash</link>                     (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *flash);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-error">gnome_app_error</link>                     (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *error);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-warning">gnome_app_warning</link>                   (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *warning);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-question">gnome_app_question</link>                  (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *question,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-question-modal">gnome_app_question_modal</link>            (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *question,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-ok-cancel">gnome_app_ok_cancel</link>                 (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-ok-cancel-modal">gnome_app_ok_cancel_modal</link>           (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-request-string">gnome_app_request_string</link>            (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *prompt,
+                                                         <link linkend="GnomeStringCallback">GnomeStringCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-app-request-password">gnome_app_request_password</link>          (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *prompt,
+                                                         <link linkend="GnomeStringCallback">GnomeStringCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="gdouble">gdouble</link>             (<link linkend="GnomeAppProgressFunc">*GnomeAppProgressFunc</link>)             (<link linkend="gpointer">gpointer</link> data);
+<link linkend="void">void</link>                (<link linkend="GnomeAppProgressCancelFunc">*GnomeAppProgressCancelFunc</link>)       (<link linkend="gpointer">gpointer</link> data);
+typedef             <link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link>;
+<link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link>  <link linkend="gnome-app-progress-timeout">gnome_app_progress_timeout</link>         (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *description,
+                                                         <link linkend="guint32">guint32</link> interval,
+                                                         <link linkend="GnomeAppProgressFunc">GnomeAppProgressFunc</link> percentage_cb,
+                                                         <link linkend="GnomeAppProgressCancelFunc">GnomeAppProgressCancelFunc</link> cancel_cb,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link>  <link linkend="gnome-app-progress-manual">gnome_app_progress_manual</link>          (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *description,
+                                                         <link linkend="GnomeAppProgressCancelFunc">GnomeAppProgressCancelFunc</link> cancel_cb,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="void">void</link>                <link linkend="gnome-app-set-progress">gnome_app_set_progress</link>              (<link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link> key,
+                                                         <link linkend="gdouble">gdouble</link> percent);
+<link linkend="void">void</link>                <link linkend="gnome-app-progress-done">gnome_app_progress_done</link>             (<link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link> key);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgnomeui-gnome-app-util.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgnomeui-gnome-app-util.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gnome-app-message" role="function" condition="deprecated:">
+<title>gnome_app_message ()</title>
+<indexterm zone="gnome-app-message" role="deprecated"><primary sortas="gnome_app_message">gnome_app_message</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_message                   (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *message);</programlisting>
+<warning><para><literal>gnome_app_message</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+A simple message, in an OK dialog or the status bar.
+Requires confirmation from the user before it goes away.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message</parameter>&#160;:</term>
+<listitem><simpara> Text of message to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-flash" role="function" condition="deprecated:">
+<title>gnome_app_flash ()</title>
+<indexterm zone="gnome-app-flash" role="deprecated"><primary sortas="gnome_app_flash">gnome_app_flash</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_app_flash                     (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *flash);</programlisting>
+<warning><para><literal>gnome_app_flash</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Flash the message in the statusbar for a few moments; if no
+statusbar, do nothing (?). For trivial little status messages,
+e.g. "Auto saving..."</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flash</parameter>&#160;:</term>
+<listitem><simpara> Text of message to be flashed
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-error" role="function" condition="deprecated:">
+<title>gnome_app_error ()</title>
+<indexterm zone="gnome-app-error" role="deprecated"><primary sortas="gnome_app_error">gnome_app_error</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_error                     (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *error);</programlisting>
+<warning><para><literal>gnome_app_error</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+An important fatal error; if it appears in the statusbar,
+it might <link linkend="gdk-beep"><function>gdk_beep()</function></link> and require acknowledgement.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> Text of error message to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-warning" role="function" condition="deprecated:">
+<title>gnome_app_warning ()</title>
+<indexterm zone="gnome-app-warning" role="deprecated"><primary sortas="gnome_app_warning">gnome_app_warning</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_warning                   (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *warning);</programlisting>
+<warning><para><literal>gnome_app_warning</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+A not-so-important error, but still marked better than a flash</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>warning</parameter>&#160;:</term>
+<listitem><simpara> Text of warning message to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-question" role="function" condition="deprecated:">
+<title>gnome_app_question ()</title>
+<indexterm zone="gnome-app-question" role="deprecated"><primary sortas="gnome_app_question">gnome_app_question</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_question                  (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *question,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_question</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Ask a yes or no question, and call the callback when it's answered.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>question</parameter>&#160;:</term>
+<listitem><simpara> Text of question to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-question-modal" role="function" condition="deprecated:">
+<title>gnome_app_question_modal ()</title>
+<indexterm zone="gnome-app-question-modal" role="deprecated"><primary sortas="gnome_app_question_modal">gnome_app_question_modal</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_question_modal            (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *question,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_question_modal</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Ask a yes or no question, and call the callback when it's answered.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>question</parameter>&#160;:</term>
+<listitem><simpara> Text of question to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-ok-cancel" role="function" condition="deprecated:">
+<title>gnome_app_ok_cancel ()</title>
+<indexterm zone="gnome-app-ok-cancel" role="deprecated"><primary sortas="gnome_app_ok_cancel">gnome_app_ok_cancel</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_ok_cancel                 (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_ok_cancel</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message</parameter>&#160;:</term>
+<listitem><simpara> Text of message to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-ok-cancel-modal" role="function" condition="deprecated:">
+<title>gnome_app_ok_cancel_modal ()</title>
+<indexterm zone="gnome-app-ok-cancel-modal" role="deprecated"><primary sortas="gnome_app_ok_cancel_modal">gnome_app_ok_cancel_modal</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_ok_cancel_modal           (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="GnomeReplyCallback">GnomeReplyCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_ok_cancel_modal</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message</parameter>&#160;:</term>
+<listitem><simpara> Text of message to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-request-string" role="function" condition="deprecated:">
+<title>gnome_app_request_string ()</title>
+<indexterm zone="gnome-app-request-string" role="deprecated"><primary sortas="gnome_app_request_string">gnome_app_request_string</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_request_string            (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *prompt,
+                                                         <link linkend="GnomeStringCallback">GnomeStringCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_request_string</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prompt</parameter>&#160;:</term>
+<listitem><simpara> Text of prompt to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-request-password" role="function" condition="deprecated:">
+<title>gnome_app_request_password ()</title>
+<indexterm zone="gnome-app-request-password" role="deprecated"><primary sortas="gnome_app_request_password">gnome_app_request_password</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_app_request_password          (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *prompt,
+                                                         <link linkend="GnomeStringCallback">GnomeStringCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_request_password</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara> Pointer to GNOME app object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prompt</parameter>&#160;:</term>
+<listitem><simpara> Text of prompt to be displayed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+Pointer to dialog widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if error or message in
+status bar.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GnomeAppProgressFunc" role="function" condition="deprecated:">
+<title>GnomeAppProgressFunc ()</title>
+<indexterm zone="GnomeAppProgressFunc" role="deprecated"><primary sortas="GnomeAppProgressFunc">GnomeAppProgressFunc</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             (*GnomeAppProgressFunc)             (<link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>GnomeAppProgressFunc</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GnomeAppProgressCancelFunc" role="function" condition="deprecated:">
+<title>GnomeAppProgressCancelFunc ()</title>
+<indexterm zone="GnomeAppProgressCancelFunc" role="deprecated"><primary sortas="GnomeAppProgressCancelFunc">GnomeAppProgressCancelFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GnomeAppProgressCancelFunc)       (<link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>GnomeAppProgressCancelFunc</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GnomeAppProgressKey" role="typedef" condition="deprecated:">
+<title>GnomeAppProgressKey</title>
+<indexterm zone="GnomeAppProgressKey" role="deprecated"><primary sortas="GnomeAppProgressKey">GnomeAppProgressKey</primary></indexterm><programlisting>typedef gpointer GnomeAppProgressKey;
+</programlisting>
+<warning><para><literal>GnomeAppProgressKey</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-app-progress-timeout" role="function" condition="deprecated:">
+<title>gnome_app_progress_timeout ()</title>
+<indexterm zone="gnome-app-progress-timeout" role="deprecated"><primary sortas="gnome_app_progress_timeout">gnome_app_progress_timeout</primary></indexterm><programlisting><link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link>  gnome_app_progress_timeout         (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *description,
+                                                         <link linkend="guint32">guint32</link> interval,
+                                                         <link linkend="GnomeAppProgressFunc">GnomeAppProgressFunc</link> percentage_cb,
+                                                         <link linkend="GnomeAppProgressCancelFunc">GnomeAppProgressCancelFunc</link> cancel_cb,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_progress_timeout</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>description</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>interval</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>percentage_cb</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancel_cb</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-progress-manual" role="function" condition="deprecated:">
+<title>gnome_app_progress_manual ()</title>
+<indexterm zone="gnome-app-progress-manual" role="deprecated"><primary sortas="gnome_app_progress_manual">gnome_app_progress_manual</primary></indexterm><programlisting><link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link>  gnome_app_progress_manual          (<link linkend="GnomeApp">GnomeApp</link> *app,
+                                                         const <link linkend="gchar">gchar</link> *description,
+                                                         <link linkend="GnomeAppProgressCancelFunc">GnomeAppProgressCancelFunc</link> cancel_cb,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>gnome_app_progress_manual</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>app</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>description</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancel_cb</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-set-progress" role="function" condition="deprecated:">
+<title>gnome_app_set_progress ()</title>
+<indexterm zone="gnome-app-set-progress" role="deprecated"><primary sortas="gnome_app_set_progress">gnome_app_set_progress</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_app_set_progress              (<link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link> key,
+                                                         <link linkend="gdouble">gdouble</link> percent);</programlisting>
+<warning><para><literal>gnome_app_set_progress</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>percent</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-app-progress-done" role="function" condition="deprecated:">
+<title>gnome_app_progress_done ()</title>
+<indexterm zone="gnome-app-progress-done" role="deprecated"><primary sortas="gnome_app_progress_done">gnome_app_progress_done</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_app_progress_done             (<link linkend="GnomeAppProgressKey">GnomeAppProgressKey</link> key);</programlisting>
+<warning><para><literal>gnome_app_progress_done</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

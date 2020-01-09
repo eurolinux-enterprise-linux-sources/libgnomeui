@@ -1,0 +1,232 @@
+<refentry id="GnomeAbout">
+<refmeta>
+<refentrytitle role="top_of_page" id="GnomeAbout.top_of_page">GnomeAbout</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeAbout</refname>
+<refpurpose>Display author, documenter and translator credits for an application.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GnomeAbout.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+                    <link linkend="GnomeAbout-struct">GnomeAbout</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-about-new">gnome_about_new</link>                     (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *version,
+                                                         const <link linkend="gchar">gchar</link> *copyright,
+                                                         const <link linkend="gchar">gchar</link> *comments,
+                                                         const <link linkend="gchar">gchar</link> **authors,
+                                                         const <link linkend="gchar">gchar</link> **documenters,
+                                                         const <link linkend="gchar">gchar</link> *translator_credits,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo_pixbuf);
+<link linkend="void">void</link>                <link linkend="gnome-about-construct">gnome_about_construct</link>               (<link linkend="GnomeAbout">GnomeAbout</link> *about,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *version,
+                                                         const <link linkend="gchar">gchar</link> *copyright,
+                                                         const <link linkend="gchar">gchar</link> *comments,
+                                                         const <link linkend="gchar">gchar</link> **authors,
+                                                         const <link linkend="gchar">gchar</link> **documenters,
+                                                         const <link linkend="gchar">gchar</link> *translator_credits,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo_pixbuf);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GnomeAbout.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkWindow">GtkWindow</link>
+                                       +----<link linkend="GtkDialog">GtkDialog</link>
+                                             +----GnomeAbout
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GnomeAbout.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GnomeAbout implements
+ <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="AtkImplementorIface">AtkImplementorIface</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GnomeAbout.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GnomeAbout--authors">authors</link>&quot;                  <link linkend="GValueArray">GValueArray</link>*          : Write
+  &quot;<link linkend="GnomeAbout--comments">comments</link>&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GnomeAbout--copyright">copyright</link>&quot;                <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GnomeAbout--documenters">documenters</link>&quot;              <link linkend="GValueArray">GValueArray</link>*          : Write
+  &quot;<link linkend="GnomeAbout--logo">logo</link>&quot;                     <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Write
+  &quot;<link linkend="GnomeAbout--name">name</link>&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GnomeAbout--translator-credits">translator-credits</link>&quot;       <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GnomeAbout--version">version</link>&quot;                  <link linkend="gchar">gchar</link>*                : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GnomeAbout.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The GnomeAbout widget is used as the standard way of displaying credits in an
+application. Typically, it will be called when a user selects the
+<literal>About...</literal> option from the <literal>Help</literal> menu. With
+one simple function call, the application can then display all of the
+appropriate information.
+</para>
+</refsect1>
+
+<refsect1 id="GnomeAbout.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomeAbout-struct" role="struct">
+<title>GnomeAbout</title>
+<indexterm zone="GnomeAbout-struct" role="deprecated"><primary sortas="GnomeAbout">GnomeAbout</primary></indexterm><programlisting>typedef struct _GnomeAbout GnomeAbout;</programlisting>
+<warning><para><literal>GnomeAbout</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+A dialog box widget containing all of the relevant credit information and
+displaying as three notebook pages.
+</para></refsect2>
+<refsect2 id="gnome-about-new" role="function" condition="deprecated:">
+<title>gnome_about_new ()</title>
+<indexterm zone="gnome-about-new" role="deprecated"><primary sortas="gnome_about_new">gnome_about_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_about_new                     (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *version,
+                                                         const <link linkend="gchar">gchar</link> *copyright,
+                                                         const <link linkend="gchar">gchar</link> *comments,
+                                                         const <link linkend="gchar">gchar</link> **authors,
+                                                         const <link linkend="gchar">gchar</link> **documenters,
+                                                         const <link linkend="gchar">gchar</link> *translator_credits,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo_pixbuf);</programlisting>
+<warning><para><literal>gnome_about_new</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Construct an application's credits box. The <parameter>authors</parameter> array cannot be empty
+and the <parameter>translator_credits</parameter> should be marked as a translatable string (so
+that only the translator for the currently active locale is displayed).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> The name of the application.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>version</parameter>&#160;:</term>
+<listitem><simpara> The version string of the application.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>copyright</parameter>&#160;:</term>
+<listitem><simpara> The application's copyright statement.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>comments</parameter>&#160;:</term>
+<listitem><simpara> A short miscellaneous string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>authors</parameter>&#160;:</term>
+<listitem><simpara> An <link linkend="NULL--CAPS"><literal>NULL</literal></link> terminated array of the application authors.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>documenters</parameter>&#160;:</term>
+<listitem><simpara> An array of the application documenters.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>translator_credits</parameter>&#160;:</term>
+<listitem><simpara> The translator for the current locale.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>logo_pixbuf</parameter>&#160;:</term>
+<listitem><simpara> The application's logo.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new "About" dialog.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-about-construct" role="function" condition="deprecated:">
+<title>gnome_about_construct ()</title>
+<indexterm zone="gnome-about-construct" role="deprecated"><primary sortas="gnome_about_construct">gnome_about_construct</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_about_construct               (<link linkend="GnomeAbout">GnomeAbout</link> *about,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *version,
+                                                         const <link linkend="gchar">gchar</link> *copyright,
+                                                         const <link linkend="gchar">gchar</link> *comments,
+                                                         const <link linkend="gchar">gchar</link> **authors,
+                                                         const <link linkend="gchar">gchar</link> **documenters,
+                                                         const <link linkend="gchar">gchar</link> *translator_credits,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo_pixbuf);</programlisting>
+<warning><para><literal>gnome_about_construct</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Similar to <link linkend="gnome-about-new"><function>gnome_about_new()</function></link> except that the pre-existing <parameter>about</parameter> widget is
+used. Note that in this version of the function, <parameter>authors</parameter> is not checked to
+be non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, so callers must be careful, since bad things will happen if
+this condition is not met.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>about</parameter>&#160;:</term>
+<listitem><simpara> An existing <link linkend="GnomeAbout"><type>GnomeAbout</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> The name of the application.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>version</parameter>&#160;:</term>
+<listitem><simpara> The version string of the application.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>copyright</parameter>&#160;:</term>
+<listitem><simpara> The application's copyright statement.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>comments</parameter>&#160;:</term>
+<listitem><simpara> A short miscellaneous string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>authors</parameter>&#160;:</term>
+<listitem><simpara> An <link linkend="NULL--CAPS"><literal>NULL</literal></link> terminated array of the application authors.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>documenters</parameter>&#160;:</term>
+<listitem><simpara> An array of the application documenters.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>translator_credits</parameter>&#160;:</term>
+<listitem><simpara> The translator for the current locale.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>logo_pixbuf</parameter>&#160;:</term>
+<listitem><simpara> The application's logo.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GnomeAbout.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GnomeAbout--authors" role="property"><title>The <literal>&quot;authors&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--authors"><primary sortas="GnomeAbout:authors">GnomeAbout:authors</primary></indexterm><programlisting>  &quot;authors&quot;                  <link linkend="GValueArray">GValueArray</link>*          : Write</programlisting>
+<para>List of authors of the programs.</para></refsect2>
+<refsect2 id="GnomeAbout--comments" role="property"><title>The <literal>&quot;comments&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--comments"><primary sortas="GnomeAbout:comments">GnomeAbout:comments</primary></indexterm><programlisting>  &quot;comments&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Comments about the program.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeAbout--copyright" role="property"><title>The <literal>&quot;copyright&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--copyright"><primary sortas="GnomeAbout:copyright">GnomeAbout:copyright</primary></indexterm><programlisting>  &quot;copyright&quot;                <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Copyright information for the program.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeAbout--documenters" role="property"><title>The <literal>&quot;documenters&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--documenters"><primary sortas="GnomeAbout:documenters">GnomeAbout:documenters</primary></indexterm><programlisting>  &quot;documenters&quot;              <link linkend="GValueArray">GValueArray</link>*          : Write</programlisting>
+<para>List of people documenting the program.</para></refsect2>
+<refsect2 id="GnomeAbout--logo" role="property"><title>The <literal>&quot;logo&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--logo"><primary sortas="GnomeAbout:logo">GnomeAbout:logo</primary></indexterm><programlisting>  &quot;logo&quot;                     <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Write</programlisting>
+<para>A logo for the about box.</para></refsect2>
+<refsect2 id="GnomeAbout--name" role="property"><title>The <literal>&quot;name&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--name"><primary sortas="GnomeAbout:name">GnomeAbout:name</primary></indexterm><programlisting>  &quot;name&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>The name of the program.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeAbout--translator-credits" role="property"><title>The <literal>&quot;translator-credits&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--translator-credits"><primary sortas="GnomeAbout:translator-credits">GnomeAbout:translator-credits</primary></indexterm><programlisting>  &quot;translator-credits&quot;       <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Credits to the translators. This string should be marked as translatable.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeAbout--version" role="property"><title>The <literal>&quot;version&quot;</literal> property</title>
+<indexterm zone="GnomeAbout--version"><primary sortas="GnomeAbout:version">GnomeAbout:version</primary></indexterm><programlisting>  &quot;version&quot;                  <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>The version of the program.</para><para>Default value: NULL</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

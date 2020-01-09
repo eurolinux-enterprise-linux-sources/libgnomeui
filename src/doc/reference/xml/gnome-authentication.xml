@@ -1,0 +1,120 @@
+<refentry id="libgnomeui-GnomeAuthentication">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgnomeui-GnomeAuthentication.top_of_page">GnomeAuthentication</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeAuthentication</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgnomeui-GnomeAuthentication.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+<link linkend="void">void</link>                <link linkend="gnome-authentication-manager-init">gnome_authentication_manager_init</link>   (void);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-authentication-manager-dialog-is-visible">gnome_authentication_manager_dialog_is_visible</link>
+                                                        (void);
+<link linkend="void">void</link>                <link linkend="gnome-authentication-manager-pop-async">gnome_authentication_manager_pop_async</link>
+                                                        (void);
+<link linkend="void">void</link>                <link linkend="gnome-authentication-manager-pop-sync">gnome_authentication_manager_pop_sync</link>
+                                                        (void);
+<link linkend="void">void</link>                <link linkend="gnome-authentication-manager-push-async">gnome_authentication_manager_push_async</link>
+                                                        (void);
+<link linkend="void">void</link>                <link linkend="gnome-authentication-manager-push-sync">gnome_authentication_manager_push_sync</link>
+                                                        (void);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgnomeui-GnomeAuthentication.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgnomeui-GnomeAuthentication.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gnome-authentication-manager-init" role="function" condition="since:2.4">
+<title>gnome_authentication_manager_init ()</title>
+<indexterm zone="gnome-authentication-manager-init" role="2.4"><primary sortas="gnome_authentication_manager_init">gnome_authentication_manager_init</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_authentication_manager_init   (void);</programlisting>
+<para>
+This function checks for thread support and does a thread initialisation, if the support 
+is available. Also sets the default sync and async gnome-vfs callbacks for various types
+of authentication.
+</para>
+<para>
+Note: If you call this, and you use threads with gtk+, you must never
+hold the gdk lock while doing synchronous gnome-vfs calls. Otherwise
+an authentication callback presenting a dialog could try to grab the
+already held gdk lock, causing a deadlock.</para>
+<para>
+</para><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gnome-authentication-manager-dialog-is-visible" role="function" condition="since:2.8">
+<title>gnome_authentication_manager_dialog_is_visible ()</title>
+<indexterm zone="gnome-authentication-manager-dialog-is-visible" role="2.8"><primary sortas="gnome_authentication_manager_dialog_is_visible">gnome_authentication_manager_dialog_is_visible</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_authentication_manager_dialog_is_visible
+                                                        (void);</programlisting>
+<para>
+This function checks whether there are any references on the authentication dialog and returns a 
+a gboolean value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if there are any references on the authentication dialog, FALSE otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="gnome-authentication-manager-pop-async" role="function" condition="since:2.6">
+<title>gnome_authentication_manager_pop_async ()</title>
+<indexterm zone="gnome-authentication-manager-pop-async" role="2.6"><primary sortas="gnome_authentication_manager_pop_async">gnome_authentication_manager_pop_async</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_authentication_manager_pop_async
+                                                        (void);</programlisting>
+<para>
+This function calls <link linkend="gnome-vfs-async-module-callback-pop"><function>gnome_vfs_async_module_callback_pop()</function></link> to remove all the temporary async 
+gnome-vfs callbacks associated with various types of authentication.</para>
+<para>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gnome-authentication-manager-pop-sync" role="function" condition="since:2.6">
+<title>gnome_authentication_manager_pop_sync ()</title>
+<indexterm zone="gnome-authentication-manager-pop-sync" role="2.6"><primary sortas="gnome_authentication_manager_pop_sync">gnome_authentication_manager_pop_sync</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_authentication_manager_pop_sync
+                                                        (void);</programlisting>
+<para>
+This function calls <link linkend="gnome-vfs-module-callback-pop"><function>gnome_vfs_module_callback_pop()</function></link> to remove all the gnome-vfs sync handlers associated
+with various types of authentication.</para>
+<para>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gnome-authentication-manager-push-async" role="function" condition="since:2.6">
+<title>gnome_authentication_manager_push_async ()</title>
+<indexterm zone="gnome-authentication-manager-push-async" role="2.6"><primary sortas="gnome_authentication_manager_push_async">gnome_authentication_manager_push_async</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_authentication_manager_push_async
+                                                        (void);</programlisting>
+<para>
+This function calls <link linkend="gnome-vfs-async-module-callback-push"><function>gnome_vfs_async_module_callback_push()</function></link> to set temporary async handlers for 
+the various types of authentication.</para>
+<para>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gnome-authentication-manager-push-sync" role="function" condition="since:2.6">
+<title>gnome_authentication_manager_push_sync ()</title>
+<indexterm zone="gnome-authentication-manager-push-sync" role="2.6"><primary sortas="gnome_authentication_manager_push_sync">gnome_authentication_manager_push_sync</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_authentication_manager_push_sync
+                                                        (void);</programlisting>
+<para>
+This function calls <link linkend="gnome-vfs-module-callback-push"><function>gnome_vfs_module_callback_push()</function></link> to set temperory handlers for 
+various types of authentication.</para>
+<para>
+</para><para role="since">Since 2.6</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

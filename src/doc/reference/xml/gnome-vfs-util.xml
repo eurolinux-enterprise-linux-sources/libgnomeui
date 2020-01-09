@@ -1,0 +1,147 @@
+<refentry id="libgnomeui-gnome-vfs-util">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgnomeui-gnome-vfs-util.top_of_page">gnome-vfs-util</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>gnome-vfs-util</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgnomeui-gnome-vfs-util.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+<link linkend="void">void</link>                (<link linkend="GnomeGdkPixbufLoadCallback">*GnomeGdkPixbufLoadCallback</link>)       (<link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> *handle,
+                                                         <link linkend="GnomeVFSResult">GnomeVFSResult</link> error,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="gpointer">gpointer</link> cb_data);
+<link linkend="void">void</link>                (<link linkend="GnomeGdkPixbufDoneCallback">*GnomeGdkPixbufDoneCallback</link>)       (<link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> *handle,
+                                                         <link linkend="gpointer">gpointer</link> cb_data);
+<link linkend="GdkPixbuf">GdkPixbuf</link> *         <link linkend="gnome-gdk-pixbuf-new-from-uri">gnome_gdk_pixbuf_new_from_uri</link>       (const <link linkend="char">char</link> *uri);
+<link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> * <link linkend="gnome-gdk-pixbuf-new-from-uri-async">gnome_gdk_pixbuf_new_from_uri_async</link>
+                                                        (const <link linkend="char">char</link> *uri,
+                                                         <link linkend="GnomeGdkPixbufLoadCallback">GnomeGdkPixbufLoadCallback</link> load_callback,
+                                                         <link linkend="GnomeGdkPixbufDoneCallback">GnomeGdkPixbufDoneCallback</link> done_callback,
+                                                         <link linkend="gpointer">gpointer</link> callback_data);
+<link linkend="void">void</link>                <link linkend="gnome-gdk-pixbuf-new-from-uri-cancel">gnome_gdk_pixbuf_new_from_uri_cancel</link>
+                                                        (<link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> *handle);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgnomeui-gnome-vfs-util.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgnomeui-gnome-vfs-util.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomeGdkPixbufLoadCallback" role="function">
+<title>GnomeGdkPixbufLoadCallback ()</title>
+<indexterm zone="GnomeGdkPixbufLoadCallback"><primary sortas="GnomeGdkPixbufLoadCallback">GnomeGdkPixbufLoadCallback</primary></indexterm><programlisting><link linkend="void">void</link>                (*GnomeGdkPixbufLoadCallback)       (<link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> *handle,
+                                                         <link linkend="GnomeVFSResult">GnomeVFSResult</link> error,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="gpointer">gpointer</link> cb_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>handle</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cb_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GnomeGdkPixbufDoneCallback" role="function">
+<title>GnomeGdkPixbufDoneCallback ()</title>
+<indexterm zone="GnomeGdkPixbufDoneCallback"><primary sortas="GnomeGdkPixbufDoneCallback">GnomeGdkPixbufDoneCallback</primary></indexterm><programlisting><link linkend="void">void</link>                (*GnomeGdkPixbufDoneCallback)       (<link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> *handle,
+                                                         <link linkend="gpointer">gpointer</link> cb_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>handle</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cb_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-gdk-pixbuf-new-from-uri" role="function" condition="since:2.14">
+<title>gnome_gdk_pixbuf_new_from_uri ()</title>
+<indexterm zone="gnome-gdk-pixbuf-new-from-uri" role="2.14"><primary sortas="gnome_gdk_pixbuf_new_from_uri">gnome_gdk_pixbuf_new_from_uri</primary></indexterm><programlisting><link linkend="GdkPixbuf">GdkPixbuf</link> *         gnome_gdk_pixbuf_new_from_uri       (const <link linkend="char">char</link> *uri);</programlisting>
+<para>
+Loads a GdkPixbuf from the image file <parameter>uri</parameter> points to, scaling it to the
+desired size. If you pass -1 for <parameter>width</parameter> or <parameter>height</parameter> then the value
+specified in the file will be used.
+</para>
+<para>
+When preserving aspect ratio, if both height and width are set the size
+is picked such that the scaled image fits in a width * height rectangle.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the uri of an image
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The loaded pixbuf, or NULL on error
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gnome-gdk-pixbuf-new-from-uri-async" role="function">
+<title>gnome_gdk_pixbuf_new_from_uri_async ()</title>
+<indexterm zone="gnome-gdk-pixbuf-new-from-uri-async"><primary sortas="gnome_gdk_pixbuf_new_from_uri_async">gnome_gdk_pixbuf_new_from_uri_async</primary></indexterm><programlisting><link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> * gnome_gdk_pixbuf_new_from_uri_async
+                                                        (const <link linkend="char">char</link> *uri,
+                                                         <link linkend="GnomeGdkPixbufLoadCallback">GnomeGdkPixbufLoadCallback</link> load_callback,
+                                                         <link linkend="GnomeGdkPixbufDoneCallback">GnomeGdkPixbufDoneCallback</link> done_callback,
+                                                         <link linkend="gpointer">gpointer</link> callback_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>load_callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>done_callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-gdk-pixbuf-new-from-uri-cancel" role="function">
+<title>gnome_gdk_pixbuf_new_from_uri_cancel ()</title>
+<indexterm zone="gnome-gdk-pixbuf-new-from-uri-cancel"><primary sortas="gnome_gdk_pixbuf_new_from_uri_cancel">gnome_gdk_pixbuf_new_from_uri_cancel</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_gdk_pixbuf_new_from_uri_cancel
+                                                        (<link linkend="GnomeGdkPixbufAsyncHandle">GnomeGdkPixbufAsyncHandle</link> *handle);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>handle</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

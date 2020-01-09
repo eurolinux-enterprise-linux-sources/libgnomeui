@@ -1,0 +1,54 @@
+<refentry id="libgnomeui-GnomeIce">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgnomeui-GnomeIce.top_of_page">gnome-ice</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>gnome-ice</refname>
+<refpurpose>Interface between ICE and gtk.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgnomeui-GnomeIce.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+<link linkend="void">void</link>                <link linkend="gnome-ice-init">gnome_ice_init</link>                      (void);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgnomeui-GnomeIce.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgnomeui-GnomeIce.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gnome-ice-init" role="function">
+<title>gnome_ice_init ()</title>
+<indexterm zone="gnome-ice-init"><primary sortas="gnome_ice_init">gnome_ice_init</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_ice_init                      (void);</programlisting>
+<para>
+Initialises the ICE(Inter-Client Exchange). Used to make some initial calls into
+the ICE library in order to accept ICE connection .</para>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

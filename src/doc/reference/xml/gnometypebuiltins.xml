@@ -1,0 +1,371 @@
+<refentry id="libgnomeui-gnometypebuiltins">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgnomeui-gnometypebuiltins.top_of_page">gnometypebuiltins</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>gnometypebuiltins</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgnomeui-gnometypebuiltins.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+#define             <link linkend="GNOME-TYPE-UI-INFO-TYPE--CAPS">GNOME_TYPE_UI_INFO_TYPE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-ui-info-type-get-type">gnome_ui_info_type_get_type</link>         (void);
+#define             <link linkend="GNOME-TYPE-UI-INFO-CONFIGURABLE-TYPES--CAPS">GNOME_TYPE_UI_INFO_CONFIGURABLE_TYPES</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-ui-info-configurable-types-get-type">gnome_ui_info_configurable_types_get_type</link>
+                                                        (void);
+#define             <link linkend="GNOME-TYPE-UI-PIXMAP-TYPE--CAPS">GNOME_TYPE_UI_PIXMAP_TYPE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-ui-pixmap-type-get-type">gnome_ui_pixmap_type_get_type</link>       (void);
+#define             <link linkend="GNOME-TYPE-INTERACT-STYLE--CAPS">GNOME_TYPE_INTERACT_STYLE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-interact-style-get-type">gnome_interact_style_get_type</link>       (void);
+#define             <link linkend="GNOME-TYPE-DIALOG-TYPE--CAPS">GNOME_TYPE_DIALOG_TYPE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-dialog-type-get-type">gnome_dialog_type_get_type</link>          (void);
+#define             <link linkend="GNOME-TYPE-SAVE-STYLE--CAPS">GNOME_TYPE_SAVE_STYLE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-save-style-get-type">gnome_save_style_get_type</link>           (void);
+#define             <link linkend="GNOME-TYPE-RESTART-STYLE--CAPS">GNOME_TYPE_RESTART_STYLE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-restart-style-get-type">gnome_restart_style_get_type</link>        (void);
+#define             <link linkend="GNOME-TYPE-CLIENT-STATE--CAPS">GNOME_TYPE_CLIENT_STATE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-client-state-get-type">gnome_client_state_get_type</link>         (void);
+#define             <link linkend="GNOME-TYPE-CLIENT-FLAGS--CAPS">GNOME_TYPE_CLIENT_FLAGS</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-client-flags-get-type">gnome_client_flags_get_type</link>         (void);
+#define             <link linkend="GNOME-TYPE-DATE-EDIT-FLAGS--CAPS">GNOME_TYPE_DATE_EDIT_FLAGS</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-date-edit-flags-get-type">gnome_date_edit_flags_get_type</link>      (void);
+#define             <link linkend="GNOME-TYPE-EDGE-POSITION--CAPS">GNOME_TYPE_EDGE_POSITION</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-edge-position-get-type">gnome_edge_position_get_type</link>        (void);
+#define             <link linkend="GNOME-TYPE-FONT-PICKER-MODE--CAPS">GNOME_TYPE_FONT_PICKER_MODE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-font-picker-mode-get-type">gnome_font_picker_mode_get_type</link>     (void);
+#define             <link linkend="GNOME-TYPE-ICON-LIST-MODE--CAPS">GNOME_TYPE_ICON_LIST_MODE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-icon-list-mode-get-type">gnome_icon_list_mode_get_type</link>       (void);
+#define             <link linkend="GNOME-TYPE-MDI-MODE--CAPS">GNOME_TYPE_MDI_MODE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-mdi-mode-get-type">gnome_mdi_mode_get_type</link>             (void);
+#define             <link linkend="GNOME-TYPE-PREFERENCES-TYPE--CAPS">GNOME_TYPE_PREFERENCES_TYPE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-preferences-type-get-type">gnome_preferences_type_get_type</link>     (void);
+#define             <link linkend="GNOME-TYPE-THUMBNAIL-SIZE--CAPS">GNOME_TYPE_THUMBNAIL_SIZE</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-thumbnail-size-get-type">gnome_thumbnail_size_get_type</link>       (void);
+#define             <link linkend="GNOME-TYPE-ICON-LOOKUP-FLAGS--CAPS">GNOME_TYPE_ICON_LOOKUP_FLAGS</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-icon-lookup-flags-get-type">gnome_icon_lookup_flags_get_type</link>    (void);
+#define             <link linkend="GNOME-TYPE-ICON-LOOKUP-RESULT-FLAGS--CAPS">GNOME_TYPE_ICON_LOOKUP_RESULT_FLAGS</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-icon-lookup-result-flags-get-type">gnome_icon_lookup_result_flags_get_type</link>
+                                                        (void);
+#define             <link linkend="GNOME-TYPE-ICON-THEME--CAPS">GNOME_TYPE_ICON_THEME</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-icon-theme-get-type">gnome_icon_theme_get_type</link>           (void);
+#define             <link linkend="GNOME-TYPE-THUMBNAIL-FACTORY--CAPS">GNOME_TYPE_THUMBNAIL_FACTORY</link>
+<link linkend="GType">GType</link>               <link linkend="gnome-thumbnail-factory-get-type">gnome_thumbnail_factory_get_type</link>    (void);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgnomeui-gnometypebuiltins.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgnomeui-gnometypebuiltins.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GNOME-TYPE-UI-INFO-TYPE--CAPS" role="macro">
+<title>GNOME_TYPE_UI_INFO_TYPE</title>
+<indexterm zone="GNOME-TYPE-UI-INFO-TYPE--CAPS"><primary sortas="GNOME_TYPE_UI_INFO_TYPE">GNOME_TYPE_UI_INFO_TYPE</primary></indexterm><programlisting>#define GNOME_TYPE_UI_INFO_TYPE gnome_ui_info_type_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-ui-info-type-get-type" role="function">
+<title>gnome_ui_info_type_get_type ()</title>
+<indexterm zone="gnome-ui-info-type-get-type"><primary sortas="gnome_ui_info_type_get_type">gnome_ui_info_type_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_ui_info_type_get_type         (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-UI-INFO-CONFIGURABLE-TYPES--CAPS" role="macro">
+<title>GNOME_TYPE_UI_INFO_CONFIGURABLE_TYPES</title>
+<indexterm zone="GNOME-TYPE-UI-INFO-CONFIGURABLE-TYPES--CAPS"><primary sortas="GNOME_TYPE_UI_INFO_CONFIGURABLE_TYPES">GNOME_TYPE_UI_INFO_CONFIGURABLE_TYPES</primary></indexterm><programlisting>#define GNOME_TYPE_UI_INFO_CONFIGURABLE_TYPES gnome_ui_info_configurable_types_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-ui-info-configurable-types-get-type" role="function">
+<title>gnome_ui_info_configurable_types_get_type ()</title>
+<indexterm zone="gnome-ui-info-configurable-types-get-type"><primary sortas="gnome_ui_info_configurable_types_get_type">gnome_ui_info_configurable_types_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_ui_info_configurable_types_get_type
+                                                        (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-UI-PIXMAP-TYPE--CAPS" role="macro">
+<title>GNOME_TYPE_UI_PIXMAP_TYPE</title>
+<indexterm zone="GNOME-TYPE-UI-PIXMAP-TYPE--CAPS"><primary sortas="GNOME_TYPE_UI_PIXMAP_TYPE">GNOME_TYPE_UI_PIXMAP_TYPE</primary></indexterm><programlisting>#define GNOME_TYPE_UI_PIXMAP_TYPE gnome_ui_pixmap_type_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-ui-pixmap-type-get-type" role="function">
+<title>gnome_ui_pixmap_type_get_type ()</title>
+<indexterm zone="gnome-ui-pixmap-type-get-type"><primary sortas="gnome_ui_pixmap_type_get_type">gnome_ui_pixmap_type_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_ui_pixmap_type_get_type       (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-INTERACT-STYLE--CAPS" role="macro">
+<title>GNOME_TYPE_INTERACT_STYLE</title>
+<indexterm zone="GNOME-TYPE-INTERACT-STYLE--CAPS"><primary sortas="GNOME_TYPE_INTERACT_STYLE">GNOME_TYPE_INTERACT_STYLE</primary></indexterm><programlisting>#define GNOME_TYPE_INTERACT_STYLE gnome_interact_style_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-interact-style-get-type" role="function">
+<title>gnome_interact_style_get_type ()</title>
+<indexterm zone="gnome-interact-style-get-type"><primary sortas="gnome_interact_style_get_type">gnome_interact_style_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_interact_style_get_type       (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-DIALOG-TYPE--CAPS" role="macro">
+<title>GNOME_TYPE_DIALOG_TYPE</title>
+<indexterm zone="GNOME-TYPE-DIALOG-TYPE--CAPS"><primary sortas="GNOME_TYPE_DIALOG_TYPE">GNOME_TYPE_DIALOG_TYPE</primary></indexterm><programlisting>#define GNOME_TYPE_DIALOG_TYPE gnome_dialog_type_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-dialog-type-get-type" role="function">
+<title>gnome_dialog_type_get_type ()</title>
+<indexterm zone="gnome-dialog-type-get-type"><primary sortas="gnome_dialog_type_get_type">gnome_dialog_type_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_dialog_type_get_type          (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-SAVE-STYLE--CAPS" role="macro">
+<title>GNOME_TYPE_SAVE_STYLE</title>
+<indexterm zone="GNOME-TYPE-SAVE-STYLE--CAPS"><primary sortas="GNOME_TYPE_SAVE_STYLE">GNOME_TYPE_SAVE_STYLE</primary></indexterm><programlisting>#define GNOME_TYPE_SAVE_STYLE gnome_save_style_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-save-style-get-type" role="function">
+<title>gnome_save_style_get_type ()</title>
+<indexterm zone="gnome-save-style-get-type"><primary sortas="gnome_save_style_get_type">gnome_save_style_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_save_style_get_type           (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-RESTART-STYLE--CAPS" role="macro">
+<title>GNOME_TYPE_RESTART_STYLE</title>
+<indexterm zone="GNOME-TYPE-RESTART-STYLE--CAPS"><primary sortas="GNOME_TYPE_RESTART_STYLE">GNOME_TYPE_RESTART_STYLE</primary></indexterm><programlisting>#define GNOME_TYPE_RESTART_STYLE gnome_restart_style_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-restart-style-get-type" role="function">
+<title>gnome_restart_style_get_type ()</title>
+<indexterm zone="gnome-restart-style-get-type"><primary sortas="gnome_restart_style_get_type">gnome_restart_style_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_restart_style_get_type        (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-CLIENT-STATE--CAPS" role="macro">
+<title>GNOME_TYPE_CLIENT_STATE</title>
+<indexterm zone="GNOME-TYPE-CLIENT-STATE--CAPS"><primary sortas="GNOME_TYPE_CLIENT_STATE">GNOME_TYPE_CLIENT_STATE</primary></indexterm><programlisting>#define GNOME_TYPE_CLIENT_STATE gnome_client_state_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-client-state-get-type" role="function">
+<title>gnome_client_state_get_type ()</title>
+<indexterm zone="gnome-client-state-get-type"><primary sortas="gnome_client_state_get_type">gnome_client_state_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_client_state_get_type         (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-CLIENT-FLAGS--CAPS" role="macro">
+<title>GNOME_TYPE_CLIENT_FLAGS</title>
+<indexterm zone="GNOME-TYPE-CLIENT-FLAGS--CAPS"><primary sortas="GNOME_TYPE_CLIENT_FLAGS">GNOME_TYPE_CLIENT_FLAGS</primary></indexterm><programlisting>#define GNOME_TYPE_CLIENT_FLAGS gnome_client_flags_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-client-flags-get-type" role="function">
+<title>gnome_client_flags_get_type ()</title>
+<indexterm zone="gnome-client-flags-get-type"><primary sortas="gnome_client_flags_get_type">gnome_client_flags_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_client_flags_get_type         (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-DATE-EDIT-FLAGS--CAPS" role="macro">
+<title>GNOME_TYPE_DATE_EDIT_FLAGS</title>
+<indexterm zone="GNOME-TYPE-DATE-EDIT-FLAGS--CAPS"><primary sortas="GNOME_TYPE_DATE_EDIT_FLAGS">GNOME_TYPE_DATE_EDIT_FLAGS</primary></indexterm><programlisting>#define GNOME_TYPE_DATE_EDIT_FLAGS gnome_date_edit_flags_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-date-edit-flags-get-type" role="function">
+<title>gnome_date_edit_flags_get_type ()</title>
+<indexterm zone="gnome-date-edit-flags-get-type"><primary sortas="gnome_date_edit_flags_get_type">gnome_date_edit_flags_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_date_edit_flags_get_type      (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-EDGE-POSITION--CAPS" role="macro">
+<title>GNOME_TYPE_EDGE_POSITION</title>
+<indexterm zone="GNOME-TYPE-EDGE-POSITION--CAPS"><primary sortas="GNOME_TYPE_EDGE_POSITION">GNOME_TYPE_EDGE_POSITION</primary></indexterm><programlisting>#define GNOME_TYPE_EDGE_POSITION gnome_edge_position_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-edge-position-get-type" role="function">
+<title>gnome_edge_position_get_type ()</title>
+<indexterm zone="gnome-edge-position-get-type"><primary sortas="gnome_edge_position_get_type">gnome_edge_position_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_edge_position_get_type        (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-FONT-PICKER-MODE--CAPS" role="macro">
+<title>GNOME_TYPE_FONT_PICKER_MODE</title>
+<indexterm zone="GNOME-TYPE-FONT-PICKER-MODE--CAPS"><primary sortas="GNOME_TYPE_FONT_PICKER_MODE">GNOME_TYPE_FONT_PICKER_MODE</primary></indexterm><programlisting>#define GNOME_TYPE_FONT_PICKER_MODE gnome_font_picker_mode_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-font-picker-mode-get-type" role="function">
+<title>gnome_font_picker_mode_get_type ()</title>
+<indexterm zone="gnome-font-picker-mode-get-type"><primary sortas="gnome_font_picker_mode_get_type">gnome_font_picker_mode_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_font_picker_mode_get_type     (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-ICON-LIST-MODE--CAPS" role="macro">
+<title>GNOME_TYPE_ICON_LIST_MODE</title>
+<indexterm zone="GNOME-TYPE-ICON-LIST-MODE--CAPS"><primary sortas="GNOME_TYPE_ICON_LIST_MODE">GNOME_TYPE_ICON_LIST_MODE</primary></indexterm><programlisting>#define GNOME_TYPE_ICON_LIST_MODE gnome_icon_list_mode_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-icon-list-mode-get-type" role="function">
+<title>gnome_icon_list_mode_get_type ()</title>
+<indexterm zone="gnome-icon-list-mode-get-type"><primary sortas="gnome_icon_list_mode_get_type">gnome_icon_list_mode_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_icon_list_mode_get_type       (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-MDI-MODE--CAPS" role="macro">
+<title>GNOME_TYPE_MDI_MODE</title>
+<indexterm zone="GNOME-TYPE-MDI-MODE--CAPS"><primary sortas="GNOME_TYPE_MDI_MODE">GNOME_TYPE_MDI_MODE</primary></indexterm><programlisting>#define GNOME_TYPE_MDI_MODE gnome_mdi_mode_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-mdi-mode-get-type" role="function">
+<title>gnome_mdi_mode_get_type ()</title>
+<indexterm zone="gnome-mdi-mode-get-type"><primary sortas="gnome_mdi_mode_get_type">gnome_mdi_mode_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_mdi_mode_get_type             (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-PREFERENCES-TYPE--CAPS" role="macro">
+<title>GNOME_TYPE_PREFERENCES_TYPE</title>
+<indexterm zone="GNOME-TYPE-PREFERENCES-TYPE--CAPS"><primary sortas="GNOME_TYPE_PREFERENCES_TYPE">GNOME_TYPE_PREFERENCES_TYPE</primary></indexterm><programlisting>#define GNOME_TYPE_PREFERENCES_TYPE gnome_preferences_type_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-preferences-type-get-type" role="function">
+<title>gnome_preferences_type_get_type ()</title>
+<indexterm zone="gnome-preferences-type-get-type"><primary sortas="gnome_preferences_type_get_type">gnome_preferences_type_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_preferences_type_get_type     (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-THUMBNAIL-SIZE--CAPS" role="macro">
+<title>GNOME_TYPE_THUMBNAIL_SIZE</title>
+<indexterm zone="GNOME-TYPE-THUMBNAIL-SIZE--CAPS"><primary sortas="GNOME_TYPE_THUMBNAIL_SIZE">GNOME_TYPE_THUMBNAIL_SIZE</primary></indexterm><programlisting>#define GNOME_TYPE_THUMBNAIL_SIZE gnome_thumbnail_size_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-thumbnail-size-get-type" role="function">
+<title>gnome_thumbnail_size_get_type ()</title>
+<indexterm zone="gnome-thumbnail-size-get-type"><primary sortas="gnome_thumbnail_size_get_type">gnome_thumbnail_size_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_thumbnail_size_get_type       (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-ICON-LOOKUP-FLAGS--CAPS" role="macro">
+<title>GNOME_TYPE_ICON_LOOKUP_FLAGS</title>
+<indexterm zone="GNOME-TYPE-ICON-LOOKUP-FLAGS--CAPS"><primary sortas="GNOME_TYPE_ICON_LOOKUP_FLAGS">GNOME_TYPE_ICON_LOOKUP_FLAGS</primary></indexterm><programlisting>#define GNOME_TYPE_ICON_LOOKUP_FLAGS gnome_icon_lookup_flags_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-icon-lookup-flags-get-type" role="function">
+<title>gnome_icon_lookup_flags_get_type ()</title>
+<indexterm zone="gnome-icon-lookup-flags-get-type"><primary sortas="gnome_icon_lookup_flags_get_type">gnome_icon_lookup_flags_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_icon_lookup_flags_get_type    (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-ICON-LOOKUP-RESULT-FLAGS--CAPS" role="macro">
+<title>GNOME_TYPE_ICON_LOOKUP_RESULT_FLAGS</title>
+<indexterm zone="GNOME-TYPE-ICON-LOOKUP-RESULT-FLAGS--CAPS"><primary sortas="GNOME_TYPE_ICON_LOOKUP_RESULT_FLAGS">GNOME_TYPE_ICON_LOOKUP_RESULT_FLAGS</primary></indexterm><programlisting>#define GNOME_TYPE_ICON_LOOKUP_RESULT_FLAGS gnome_icon_lookup_result_flags_get_type()
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-icon-lookup-result-flags-get-type" role="function">
+<title>gnome_icon_lookup_result_flags_get_type ()</title>
+<indexterm zone="gnome-icon-lookup-result-flags-get-type"><primary sortas="gnome_icon_lookup_result_flags_get_type">gnome_icon_lookup_result_flags_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_icon_lookup_result_flags_get_type
+                                                        (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-ICON-THEME--CAPS" role="macro" condition="deprecated:">
+<title>GNOME_TYPE_ICON_THEME</title>
+<indexterm zone="GNOME-TYPE-ICON-THEME--CAPS" role="deprecated"><primary sortas="GNOME_TYPE_ICON_THEME">GNOME_TYPE_ICON_THEME</primary></indexterm><programlisting>#define GNOME_TYPE_ICON_THEME             (gnome_icon_theme_get_type ())
+</programlisting>
+<warning><para><literal>GNOME_TYPE_ICON_THEME</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-icon-theme-get-type" role="function" condition="deprecated:">
+<title>gnome_icon_theme_get_type ()</title>
+<indexterm zone="gnome-icon-theme-get-type" role="deprecated"><primary sortas="gnome_icon_theme_get_type">gnome_icon_theme_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_icon_theme_get_type           (void);</programlisting>
+<warning><para><literal>gnome_icon_theme_get_type</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GNOME-TYPE-THUMBNAIL-FACTORY--CAPS" role="macro">
+<title>GNOME_TYPE_THUMBNAIL_FACTORY</title>
+<indexterm zone="GNOME-TYPE-THUMBNAIL-FACTORY--CAPS"><primary sortas="GNOME_TYPE_THUMBNAIL_FACTORY">GNOME_TYPE_THUMBNAIL_FACTORY</primary></indexterm><programlisting>#define GNOME_TYPE_THUMBNAIL_FACTORY	(gnome_thumbnail_factory_get_type ())
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-thumbnail-factory-get-type" role="function">
+<title>gnome_thumbnail_factory_get_type ()</title>
+<indexterm zone="gnome-thumbnail-factory-get-type"><primary sortas="gnome_thumbnail_factory_get_type">gnome_thumbnail_factory_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               gnome_thumbnail_factory_get_type    (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

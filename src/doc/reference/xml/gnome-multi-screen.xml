@@ -1,0 +1,229 @@
+<refentry id="libgnomeui-GnomeMultiScreen">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgnomeui-GnomeMultiScreen.top_of_page">GnomeMultiScreen</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeMultiScreen</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgnomeui-GnomeMultiScreen.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-url-show-on-screen">gnome_url_show_on_screen</link>            (const <link linkend="char">char</link> *url,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-help-display-on-screen">gnome_help_display_on_screen</link>        (const <link linkend="char">char</link> *file_name,
+                                                         const <link linkend="char">char</link> *link_id,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-help-display-with-doc-id-on-screen">gnome_help_display_with_doc_id_on_screen</link>
+                                                        (<link linkend="GnomeProgram">GnomeProgram</link> *program,
+                                                         const <link linkend="char">char</link> *doc_id,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         const <link linkend="char">char</link> *link_id,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-help-display-desktop-on-screen">gnome_help_display_desktop_on_screen</link>
+                                                        (<link linkend="GnomeProgram">GnomeProgram</link> *program,
+                                                         const <link linkend="char">char</link> *doc_id,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         const <link linkend="char">char</link> *link_id,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-help-display-uri-on-screen">gnome_help_display_uri_on_screen</link>    (const <link linkend="char">char</link> *help_uri,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgnomeui-GnomeMultiScreen.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgnomeui-GnomeMultiScreen.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gnome-url-show-on-screen" role="function" condition="since:2.6">
+<title>gnome_url_show_on_screen ()</title>
+<indexterm zone="gnome-url-show-on-screen" role="2.6"><primary sortas="gnome_url_show_on_screen">gnome_url_show_on_screen</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_url_show_on_screen            (const <link linkend="char">char</link> *url,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Like <link linkend="gnome-url-show"><function>gnome_url_show()</function></link>, but ensures that the viewer application
+appears on <parameter>screen</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>url</parameter>&#160;:</term>
+<listitem><simpara> The url to display. Should begin with the protocol to use (e.g.
+"http:", "ghelp:", etc)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> Used to store any errors that result from trying to display the <parameter>url</parameter>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if everything went fine, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise (in which case
+<parameter>error</parameter> will contain the actual error).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gnome-help-display-on-screen" role="function" condition="since:2.6">
+<title>gnome_help_display_on_screen ()</title>
+<indexterm zone="gnome-help-display-on-screen" role="2.6"><primary sortas="gnome_help_display_on_screen">gnome_help_display_on_screen</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_help_display_on_screen        (const <link linkend="char">char</link> *file_name,
+                                                         const <link linkend="char">char</link> *link_id,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Like <link linkend="gnome-help-display"><function>gnome_help_display()</function></link>, but ensures that the help viewer
+application appears on <parameter>screen</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> The name of the help document to display.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>link_id</parameter>&#160;:</term>
+<listitem><simpara> Can be <link linkend="NULL--CAPS"><literal>NULL</literal></link>. If set, refers to an anchor or section id within the
+requested document.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GError"><type>GError</type></link> instance that will hold the specifics of any error which
+occurs during processing, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise (in which case <parameter>error</parameter> will
+contain the actual error).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gnome-help-display-with-doc-id-on-screen" role="function" condition="since:2.6">
+<title>gnome_help_display_with_doc_id_on_screen ()</title>
+<indexterm zone="gnome-help-display-with-doc-id-on-screen" role="2.6"><primary sortas="gnome_help_display_with_doc_id_on_screen">gnome_help_display_with_doc_id_on_screen</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_help_display_with_doc_id_on_screen
+                                                        (<link linkend="GnomeProgram">GnomeProgram</link> *program,
+                                                         const <link linkend="char">char</link> *doc_id,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         const <link linkend="char">char</link> *link_id,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Like <link linkend="gnome-help-display-with-doc-id"><function>gnome_help_display_with_doc_id()</function></link>, but ensures that the help
+viewer application appears on <parameter>screen</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>program</parameter>&#160;:</term>
+<listitem><simpara> The current application object, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for the default one.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>doc_id</parameter>&#160;:</term>
+<listitem><simpara> The document identifier, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to default to the application ID
+(app_id) of the specified <parameter>program</parameter>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> The name of the help document to display.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>link_id</parameter>&#160;:</term>
+<listitem><simpara> Can be <link linkend="NULL--CAPS"><literal>NULL</literal></link>. If set, refers to an anchor or section id within the
+requested document.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GError"><type>GError</type></link> instance that will hold the specifics of any error which
+occurs during processing, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise (in which case <parameter>error</parameter> will
+contain the actual error).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gnome-help-display-desktop-on-screen" role="function" condition="since:2.6">
+<title>gnome_help_display_desktop_on_screen ()</title>
+<indexterm zone="gnome-help-display-desktop-on-screen" role="2.6"><primary sortas="gnome_help_display_desktop_on_screen">gnome_help_display_desktop_on_screen</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_help_display_desktop_on_screen
+                                                        (<link linkend="GnomeProgram">GnomeProgram</link> *program,
+                                                         const <link linkend="char">char</link> *doc_id,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         const <link linkend="char">char</link> *link_id,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Like <link linkend="gnome-help-display-desktop"><function>gnome_help_display_desktop()</function></link>, but ensures that the help
+viewer application appears on <parameter>screen</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>program</parameter>&#160;:</term>
+<listitem><simpara> The current application object, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for the default one.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>doc_id</parameter>&#160;:</term>
+<listitem><simpara> The name of the help file relative to the system's help domain
+(<link linkend="GNOME-FILE-DOMAIN-HELP--CAPS"><type>GNOME_FILE_DOMAIN_HELP</type></link>).
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> The name of the help document to display.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>link_id</parameter>&#160;:</term>
+<listitem><simpara> Can be <link linkend="NULL--CAPS"><literal>NULL</literal></link>. If set, refers to an anchor or section id within the
+requested document.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GError"><type>GError</type></link> instance that will hold the specifics of any error which
+occurs during processing, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise (in which case <parameter>error</parameter> will
+contain the actual error).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gnome-help-display-uri-on-screen" role="function" condition="since:2.6">
+<title>gnome_help_display_uri_on_screen ()</title>
+<indexterm zone="gnome-help-display-uri-on-screen" role="2.6"><primary sortas="gnome_help_display_uri_on_screen">gnome_help_display_uri_on_screen</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_help_display_uri_on_screen    (const <link linkend="char">char</link> *help_uri,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Like <link linkend="gnome-help-display-uri"><function>gnome_help_display_uri()</function></link>, but ensures that the help viewer
+application appears on <parameter>screen</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>help_uri</parameter>&#160;:</term>
+<listitem><simpara> The URI to display.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GError"><type>GError</type></link> instance that will hold the specifics of any error which
+occurs during processing, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise (in which case <parameter>error</parameter> will
+contain the actual error).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

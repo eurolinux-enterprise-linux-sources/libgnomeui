@@ -1,0 +1,462 @@
+<refentry id="GnomeDruidPageStandard">
+<refmeta>
+<refentrytitle role="top_of_page" id="GnomeDruidPageStandard.top_of_page">GnomeDruidPageStandard</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeDruidPageStandard</refname>
+<refpurpose>A widget used to implement the middle pages in a druid's sequence.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GnomeDruidPageStandard.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+                    <link linkend="GnomeDruidPageStandard-struct">GnomeDruidPageStandard</link>;
+#define             <link linkend="gnome-druid-page-standard-set-bg-color">gnome_druid_page_standard_set_bg_color</link>
+#define             <link linkend="gnome-druid-page-standard-set-logo-bg-color">gnome_druid_page_standard_set_logo_bg_color</link>
+#define             <link linkend="gnome-druid-page-standard-set-title-color">gnome_druid_page_standard_set_title_color</link>
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-druid-page-standard-new">gnome_druid_page_standard_new</link>       (void);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-druid-page-standard-new-with-vals">gnome_druid_page_standard_new_with_vals</link>
+                                                        (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *top_watermark);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-set-title">gnome_druid_page_standard_set_title</link> (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         const <link linkend="gchar">gchar</link> *title);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-set-logo">gnome_druid_page_standard_set_logo</link>  (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo_image);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-set-top-watermark">gnome_druid_page_standard_set_top_watermark</link>
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *top_watermark_image);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-set-title-foreground">gnome_druid_page_standard_set_title_foreground</link>
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-set-background">gnome_druid_page_standard_set_background</link>
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-set-logo-background">gnome_druid_page_standard_set_logo_background</link>
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-set-contents-background">gnome_druid_page_standard_set_contents_background</link>
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-standard-append-item">gnome_druid_page_standard_append_item</link>
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         const <link linkend="gchar">gchar</link> *question,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *item,
+                                                         const <link linkend="gchar">gchar</link> *additional_info);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GnomeDruidPageStandard.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GnomeDruidPage">GnomeDruidPage</link>
+                                       +----GnomeDruidPageStandard
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GnomeDruidPageStandard.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GnomeDruidPageStandard implements
+ <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="AtkImplementorIface">AtkImplementorIface</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GnomeDruidPageStandard.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GnomeDruidPageStandard--background">background</link>&quot;               <link linkend="gchar">gchar</link>*                : Write
+  &quot;<link linkend="GnomeDruidPageStandard--background-gdk">background-gdk</link>&quot;           <link linkend="GdkColor">GdkColor</link>*             : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--background-set">background-set</link>&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--contents-background">contents-background</link>&quot;      <link linkend="gchar">gchar</link>*                : Write
+  &quot;<link linkend="GnomeDruidPageStandard--contents-background-gdk">contents-background-gdk</link>&quot;  <link linkend="GdkColor">GdkColor</link>*             : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--contents-background-set">contents-background-set</link>&quot;  <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--logo">logo</link>&quot;                     <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--logo-background">logo-background</link>&quot;          <link linkend="gchar">gchar</link>*                : Write
+  &quot;<link linkend="GnomeDruidPageStandard--logo-background-gdk">logo-background-gdk</link>&quot;      <link linkend="GdkColor">GdkColor</link>*             : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--logo-background-set">logo-background-set</link>&quot;      <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--title">title</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--title-foreground">title-foreground</link>&quot;         <link linkend="gchar">gchar</link>*                : Write
+  &quot;<link linkend="GnomeDruidPageStandard--title-foreground-gdk">title-foreground-gdk</link>&quot;     <link linkend="GdkColor">GdkColor</link>*             : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--title-foreground-set">title-foreground-set</link>&quot;     <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GnomeDruidPageStandard--top-watermark">top-watermark</link>&quot;            <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GnomeDruidPageStandard.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This widget provides similar functionality to that in <link linkend="GnomeDruidPageEdge"><type>GnomeDruidPageEdge</type></link>. It
+is used for pages that are not the initial or terminal pages of a druid.
+</para>
+<para>
+The main difference between an edge and a standard druid page (in a display
+sense) is that standard pages do not have a left-side watermark and the body of
+the contents section is a bit more arbitrary (it is a GTK+ vbox widget), rather
+than just displaying text (which is the common case for edge pages).
+</para>
+<note>
+  <para>
+  There are some differences in the programming API between <link linkend="GnomeDruidEdgePage"><type>GnomeDruidEdgePage</type></link>
+  and <link linkend="GnomeDruidStandardPage"><type>GnomeDruidStandardPage</type></link> in GNOME 2 because the latter has been heavily
+  redesigned internally, whereas the former has not been. Later versions of
+  GNOME (2.2 and beyond) may contain further refinements to edge pages).
+  </para>
+</note>
+</refsect1>
+
+<refsect1 id="GnomeDruidPageStandard.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomeDruidPageStandard-struct" role="struct">
+<title>GnomeDruidPageStandard</title>
+<indexterm zone="GnomeDruidPageStandard-struct" role="deprecated"><primary sortas="GnomeDruidPageStandard">GnomeDruidPageStandard</primary></indexterm><programlisting>typedef struct {
+	GtkWidget *vbox;
+	gchar *title;
+	GdkPixbuf *logo;
+	GdkPixbuf *top_watermark;
+	GdkColor title_foreground;
+	GdkColor background;
+	GdkColor logo_background;
+	GdkColor contents_background;
+} GnomeDruidPageStandard;
+</programlisting>
+<warning><para><literal>GnomeDruidPageStandard</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+A widget representing pages that are not initial or terminal pages of a
+druid.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkWidget">GtkWidget</link>&#160;*<structfield>vbox</structfield>;</term>
+<listitem><simpara> A packing widget that holds the contents of the page.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>title</structfield>;</term>
+<listitem><simpara> The title of the displayed page.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkPixbuf">GdkPixbuf</link>&#160;*<structfield>logo</structfield>;</term>
+<listitem><simpara> The logo of the displayed page.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkPixbuf">GdkPixbuf</link>&#160;*<structfield>top_watermark</structfield>;</term>
+<listitem><simpara> The watermark at the top of the displated page.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkColor">GdkColor</link>&#160;<structfield>title_foreground</structfield>;</term>
+<listitem><simpara> The color of the title text.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkColor">GdkColor</link>&#160;<structfield>background</structfield>;</term>
+<listitem><simpara> The color of the background of the top section and title.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkColor">GdkColor</link>&#160;<structfield>logo_background</structfield>;</term>
+<listitem><simpara> The background color of the logo.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkColor">GdkColor</link>&#160;<structfield>contents_background</structfield>;</term>
+<listitem><simpara> The background color of the contents section.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-bg-color" role="macro" condition="deprecated:">
+<title>gnome_druid_page_standard_set_bg_color</title>
+<indexterm zone="gnome-druid-page-standard-set-bg-color" role="deprecated"><primary sortas="gnome_druid_page_standard_set_bg_color">gnome_druid_page_standard_set_bg_color</primary></indexterm><programlisting>#define             gnome_druid_page_standard_set_bg_color</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_bg_color</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This just calls <link linkend="gnome-druid-page-standard-set-background"><function>gnome_druid_page_standard_set_background()</function></link> and new code should
+use that function directly.
+</para></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-logo-bg-color" role="macro" condition="deprecated:">
+<title>gnome_druid_page_standard_set_logo_bg_color</title>
+<indexterm zone="gnome-druid-page-standard-set-logo-bg-color" role="deprecated"><primary sortas="gnome_druid_page_standard_set_logo_bg_color">gnome_druid_page_standard_set_logo_bg_color</primary></indexterm><programlisting>#define             gnome_druid_page_standard_set_logo_bg_color</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_logo_bg_color</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This just calls <link linkend="gnome-druid-page-standard-set-logo-background"><function>gnome_druid_page_standard_set_logo_background()</function></link> and new code
+should use that function directly.
+</para></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-title-color" role="macro" condition="deprecated:">
+<title>gnome_druid_page_standard_set_title_color</title>
+<indexterm zone="gnome-druid-page-standard-set-title-color" role="deprecated"><primary sortas="gnome_druid_page_standard_set_title_color">gnome_druid_page_standard_set_title_color</primary></indexterm><programlisting>#define             gnome_druid_page_standard_set_title_color</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_title_color</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This just calls <link linkend="gnome-druid-page-standard-set-title-foregournd"><function>gnome_druid_page_standard_set_title_foregournd()</function></link> and new code
+should use that function directly.
+</para></refsect2>
+<refsect2 id="gnome-druid-page-standard-new" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_new ()</title>
+<indexterm zone="gnome-druid-page-standard-new" role="deprecated"><primary sortas="gnome_druid_page_standard_new">gnome_druid_page_standard_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_druid_page_standard_new       (void);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_new</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Construct a new <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> as a <link linkend="GtkWidget"><type>GtkWidget</type></link> pointer.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-new-with-vals" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_new_with_vals ()</title>
+<indexterm zone="gnome-druid-page-standard-new-with-vals" role="deprecated"><primary sortas="gnome_druid_page_standard_new_with_vals">gnome_druid_page_standard_new_with_vals</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_druid_page_standard_new_with_vals
+                                                        (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *top_watermark);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_new_with_vals</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Like <link linkend="gnome-druid-page-standard-new"><function>gnome_druid_page_standard_new()</function></link>, but allows the caller to fill in some
+of the values at the same time.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> The title of the druid page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>logo</parameter>&#160;:</term>
+<listitem><simpara> The logo to put on the druid page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>top_watermark</parameter>&#160;:</term>
+<listitem><simpara> The watermark to put at the top of the druid page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> as a <link linkend="GtkWidget"><type>GtkWidget</type></link> pointer.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-title" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_set_title ()</title>
+<indexterm zone="gnome-druid-page-standard-set-title" role="deprecated"><primary sortas="gnome_druid_page_standard_set_title">gnome_druid_page_standard_set_title</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_set_title (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         const <link linkend="gchar">gchar</link> *title);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_title</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the title to the value of <parameter>title</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> The string to use as the new title text.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-logo" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_set_logo ()</title>
+<indexterm zone="gnome-druid-page-standard-set-logo" role="deprecated"><primary sortas="gnome_druid_page_standard_set_logo">gnome_druid_page_standard_set_logo</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_set_logo  (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *logo_image);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_logo</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> as the logo in the top right corner.
+If <link linkend="NULL--CAPS"><literal>NULL</literal></link>, then no logo will be displayed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>logo_image</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> to use as a logo.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-top-watermark" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_set_top_watermark ()</title>
+<indexterm zone="gnome-druid-page-standard-set-top-watermark" role="deprecated"><primary sortas="gnome_druid_page_standard_set_top_watermark">gnome_druid_page_standard_set_top_watermark</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_set_top_watermark
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *top_watermark_image);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_top_watermark</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> as the watermark on top of the top
+strip on the druid.  If <link linkend="top-watermark-image"><type>top_watermark_image</type></link> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, it is reset
+to the normal color.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>top_watermark_image</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> to use as a top watermark.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-title-foreground" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_set_title_foreground ()</title>
+<indexterm zone="gnome-druid-page-standard-set-title-foreground" role="deprecated"><primary sortas="gnome_druid_page_standard_set_title_foreground">gnome_druid_page_standard_set_title_foreground</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_set_title_foreground
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_title_foreground</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the title text to the specified color.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>color</parameter>&#160;:</term>
+<listitem><simpara> The new color of the title text.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-background" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_set_background ()</title>
+<indexterm zone="gnome-druid-page-standard-set-background" role="deprecated"><primary sortas="gnome_druid_page_standard_set_background">gnome_druid_page_standard_set_background</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_set_background
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_background</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the background color of the top section of the druid page to <parameter>color</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>color</parameter>&#160;:</term>
+<listitem><simpara> The new background color.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-logo-background" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_set_logo_background ()</title>
+<indexterm zone="gnome-druid-page-standard-set-logo-background" role="deprecated"><primary sortas="gnome_druid_page_standard_set_logo_background">gnome_druid_page_standard_set_logo_background</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_set_logo_background
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_logo_background</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the background of the logo to <parameter>color</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>color</parameter>&#160;:</term>
+<listitem><simpara> The new color for the logo background.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-set-contents-background" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_set_contents_background ()</title>
+<indexterm zone="gnome-druid-page-standard-set-contents-background" role="deprecated"><primary sortas="gnome_druid_page_standard_set_contents_background">gnome_druid_page_standard_set_contents_background</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_set_contents_background
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         <link linkend="GdkColor">GdkColor</link> *color);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_set_contents_background</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the color of the main contents section's background to <parameter>color</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>color</parameter>&#160;:</term>
+<listitem><simpara> The new color for the main body's background.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-standard-append-item" role="function" condition="deprecated:">
+<title>gnome_druid_page_standard_append_item ()</title>
+<indexterm zone="gnome-druid-page-standard-append-item" role="deprecated"><primary sortas="gnome_druid_page_standard_append_item">gnome_druid_page_standard_append_item</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_standard_append_item
+                                                        (<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link> *druid_page_standard,
+                                                         const <link linkend="gchar">gchar</link> *question,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *item,
+                                                         const <link linkend="gchar">gchar</link> *additional_info);</programlisting>
+<warning><para><literal>gnome_druid_page_standard_append_item</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Convenience function to add a <link linkend="GtkWidget"><type>GtkWidget</type></link> to the
+<link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> vbox. This function creates a new contents section
+that has the <parameter>question</parameter> text followed by the <parameter>item</parameter> widget and then the
+<parameter>addition_info</parameter> text, all stacked vertically from top to bottom. 
+</para>
+<para>
+The <parameter>item</parameter> widget could be something like a set of radio checkbuttons
+requesting a choice from the user.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page_standard</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeDruidPageStandard"><type>GnomeDruidPageStandard</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>question</parameter>&#160;:</term>
+<listitem><simpara> The text to place above the item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>item</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="GtkWidget"><type>GtkWidget</type></link> to be included.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>additional_info</parameter>&#160;:</term>
+<listitem><simpara> The text to be placed below the item in a smaller
+font.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GnomeDruidPageStandard.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GnomeDruidPageStandard--background" role="property"><title>The <literal>&quot;background&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--background"><primary sortas="GnomeDruidPageStandard:background">GnomeDruidPageStandard:background</primary></indexterm><programlisting>  &quot;background&quot;               <link linkend="gchar">gchar</link>*                : Write</programlisting>
+<para>Background color.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--background-gdk" role="property"><title>The <literal>&quot;background-gdk&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--background-gdk"><primary sortas="GnomeDruidPageStandard:background-gdk">GnomeDruidPageStandard:background-gdk</primary></indexterm><programlisting>  &quot;background-gdk&quot;           <link linkend="GdkColor">GdkColor</link>*             : Read / Write</programlisting>
+<para>Background color as a GdkColor.</para></refsect2>
+<refsect2 id="GnomeDruidPageStandard--background-set" role="property"><title>The <literal>&quot;background-set&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--background-set"><primary sortas="GnomeDruidPageStandard:background-set">GnomeDruidPageStandard:background-set</primary></indexterm><programlisting>  &quot;background-set&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Background color is set.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--contents-background" role="property"><title>The <literal>&quot;contents-background&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--contents-background"><primary sortas="GnomeDruidPageStandard:contents-background">GnomeDruidPageStandard:contents-background</primary></indexterm><programlisting>  &quot;contents-background&quot;      <link linkend="gchar">gchar</link>*                : Write</programlisting>
+<para>Contents Background color.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--contents-background-gdk" role="property"><title>The <literal>&quot;contents-background-gdk&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--contents-background-gdk"><primary sortas="GnomeDruidPageStandard:contents-background-gdk">GnomeDruidPageStandard:contents-background-gdk</primary></indexterm><programlisting>  &quot;contents-background-gdk&quot;  <link linkend="GdkColor">GdkColor</link>*             : Read / Write</programlisting>
+<para>Contents Background color as a GdkColor.</para></refsect2>
+<refsect2 id="GnomeDruidPageStandard--contents-background-set" role="property"><title>The <literal>&quot;contents-background-set&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--contents-background-set"><primary sortas="GnomeDruidPageStandard:contents-background-set">GnomeDruidPageStandard:contents-background-set</primary></indexterm><programlisting>  &quot;contents-background-set&quot;  <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Contents Background color is set.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--logo" role="property"><title>The <literal>&quot;logo&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--logo"><primary sortas="GnomeDruidPageStandard:logo">GnomeDruidPageStandard:logo</primary></indexterm><programlisting>  &quot;logo&quot;                     <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write</programlisting>
+<para>Logo image.</para></refsect2>
+<refsect2 id="GnomeDruidPageStandard--logo-background" role="property"><title>The <literal>&quot;logo-background&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--logo-background"><primary sortas="GnomeDruidPageStandard:logo-background">GnomeDruidPageStandard:logo-background</primary></indexterm><programlisting>  &quot;logo-background&quot;          <link linkend="gchar">gchar</link>*                : Write</programlisting>
+<para>Logo Background color.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--logo-background-gdk" role="property"><title>The <literal>&quot;logo-background-gdk&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--logo-background-gdk"><primary sortas="GnomeDruidPageStandard:logo-background-gdk">GnomeDruidPageStandard:logo-background-gdk</primary></indexterm><programlisting>  &quot;logo-background-gdk&quot;      <link linkend="GdkColor">GdkColor</link>*             : Read / Write</programlisting>
+<para>Logo Background color as a GdkColor.</para></refsect2>
+<refsect2 id="GnomeDruidPageStandard--logo-background-set" role="property"><title>The <literal>&quot;logo-background-set&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--logo-background-set"><primary sortas="GnomeDruidPageStandard:logo-background-set">GnomeDruidPageStandard:logo-background-set</primary></indexterm><programlisting>  &quot;logo-background-set&quot;      <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Logo Background color is set.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--title" role="property"><title>The <literal>&quot;title&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--title"><primary sortas="GnomeDruidPageStandard:title">GnomeDruidPageStandard:title</primary></indexterm><programlisting>  &quot;title&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Title of the druid.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--title-foreground" role="property"><title>The <literal>&quot;title-foreground&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--title-foreground"><primary sortas="GnomeDruidPageStandard:title-foreground">GnomeDruidPageStandard:title-foreground</primary></indexterm><programlisting>  &quot;title-foreground&quot;         <link linkend="gchar">gchar</link>*                : Write</programlisting>
+<para>Foreground color of the title.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--title-foreground-gdk" role="property"><title>The <literal>&quot;title-foreground-gdk&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--title-foreground-gdk"><primary sortas="GnomeDruidPageStandard:title-foreground-gdk">GnomeDruidPageStandard:title-foreground-gdk</primary></indexterm><programlisting>  &quot;title-foreground-gdk&quot;     <link linkend="GdkColor">GdkColor</link>*             : Read / Write</programlisting>
+<para>Foreground color of the title as a GdkColor.</para></refsect2>
+<refsect2 id="GnomeDruidPageStandard--title-foreground-set" role="property"><title>The <literal>&quot;title-foreground-set&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--title-foreground-set"><primary sortas="GnomeDruidPageStandard:title-foreground-set">GnomeDruidPageStandard:title-foreground-set</primary></indexterm><programlisting>  &quot;title-foreground-set&quot;     <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Foreground color of the title is set.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GnomeDruidPageStandard--top-watermark" role="property"><title>The <literal>&quot;top-watermark&quot;</literal> property</title>
+<indexterm zone="GnomeDruidPageStandard--top-watermark"><primary sortas="GnomeDruidPageStandard:top-watermark">GnomeDruidPageStandard:top-watermark</primary></indexterm><programlisting>  &quot;top-watermark&quot;            <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write</programlisting>
+<para>Watermark image for the top.</para></refsect2>
+</refsect1>
+
+
+
+
+</refentry>

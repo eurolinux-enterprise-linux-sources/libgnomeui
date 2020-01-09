@@ -1,0 +1,209 @@
+<refentry id="GnomePropertyBox">
+<refmeta>
+<refentrytitle role="top_of_page" id="GnomePropertyBox.top_of_page">GnomePropertyBox</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomePropertyBox</refname>
+<refpurpose>Create a tabbed dialog for setting properties and preferences.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GnomePropertyBox.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+                    <link linkend="GnomePropertyBox-struct">GnomePropertyBox</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-property-box-new">gnome_property_box_new</link>              (void);
+<link linkend="void">void</link>                <link linkend="gnome-property-box-changed">gnome_property_box_changed</link>          (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box);
+<link linkend="void">void</link>                <link linkend="gnome-property-box-set-modified">gnome_property_box_set_modified</link>     (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box,
+                                                         <link linkend="gboolean">gboolean</link> state);
+<link linkend="gint">gint</link>                <link linkend="gnome-property-box-append-page">gnome_property_box_append_page</link>      (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab_label);
+<link linkend="void">void</link>                <link linkend="gnome-property-box-set-state">gnome_property_box_set_state</link>        (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box,
+                                                         <link linkend="gboolean">gboolean</link> state);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GnomePropertyBox.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkWindow">GtkWindow</link>
+                                       +----<link linkend="GnomeDialog">GnomeDialog</link>
+                                             +----GnomePropertyBox
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GnomePropertyBox.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GnomePropertyBox implements
+ <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="AtkImplementorIface">AtkImplementorIface</link>.</para>
+</refsect1>
+
+
+
+<refsect1 id="GnomePropertyBox.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GnomePropertyBox-apply">apply</link>&quot;                                          : Run Last
+  &quot;<link linkend="GnomePropertyBox-help">help</link>&quot;                                           : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GnomePropertyBox.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GnomePropertyBox.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomePropertyBox-struct" role="struct">
+<title>GnomePropertyBox</title>
+<indexterm zone="GnomePropertyBox-struct" role="deprecated"><primary sortas="GnomePropertyBox">GnomePropertyBox</primary></indexterm><programlisting>typedef struct _GnomePropertyBox GnomePropertyBox;</programlisting>
+<warning><para><literal>GnomePropertyBox</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+An opaque widget representing a property box. Items should be added to this
+widget using gnome_property_box_append_page.</para>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-property-box-new" role="function" condition="deprecated:">
+<title>gnome_property_box_new ()</title>
+<indexterm zone="gnome-property-box-new" role="deprecated"><primary sortas="gnome_property_box_new">gnome_property_box_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_property_box_new              (void);</programlisting>
+<warning><para><literal>gnome_property_box_new</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Creates a new GnomePropertyBox widget.  The PropertyBox widget
+is useful for making consistent configuration dialog boxes.
+</para>
+<para>
+When a setting has been made to a property in the PropertyBox
+your program needs to invoke the gnome_property_box_changed to signal
+a change (this will enable the Ok/Apply buttons).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a newly created GnomePropertyBox widget.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-property-box-changed" role="function" condition="deprecated:">
+<title>gnome_property_box_changed ()</title>
+<indexterm zone="gnome-property-box-changed" role="deprecated"><primary sortas="gnome_property_box_changed">gnome_property_box_changed</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_property_box_changed          (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box);</programlisting>
+<warning><para><literal>gnome_property_box_changed</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+When a setting has changed, the code needs to invoke this routine
+to make the Ok/Apply buttons sensitive.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>property_box</parameter>&#160;:</term>
+<listitem><simpara> The GnomePropertyBox that contains the changed data
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-property-box-set-modified" role="function" condition="deprecated:">
+<title>gnome_property_box_set_modified ()</title>
+<indexterm zone="gnome-property-box-set-modified" role="deprecated"><primary sortas="gnome_property_box_set_modified">gnome_property_box_set_modified</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_property_box_set_modified     (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box,
+                                                         <link linkend="gboolean">gboolean</link> state);</programlisting>
+<warning><para><literal>gnome_property_box_set_modified</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This sets the modified flag of the GnomePropertyBox to the value in <parameter>state</parameter>.
+Affects whether the OK/Apply buttons are sensitive.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>property_box</parameter>&#160;:</term>
+<listitem><simpara> The GnomePropertyBox that contains the changed data
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>state</parameter>&#160;:</term>
+<listitem><simpara>        The state. <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> means modified, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> means unmodified.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-property-box-append-page" role="function" condition="deprecated:">
+<title>gnome_property_box_append_page ()</title>
+<indexterm zone="gnome-property-box-append-page" role="deprecated"><primary sortas="gnome_property_box_append_page">gnome_property_box_append_page</primary></indexterm><programlisting><link linkend="gint">gint</link>                gnome_property_box_append_page      (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab_label);</programlisting>
+<warning><para><literal>gnome_property_box_append_page</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Appends a new page to the GnomePropertyBox.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>property_box</parameter>&#160;:</term>
+<listitem><simpara> The property box where we are inserting a new page
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara>        The widget that is being inserted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tab_label</parameter>&#160;:</term>
+<listitem><simpara>    The widget used as the label for this confiugration page
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the assigned index of the page inside the GnomePropertyBox or
+-1 if one of the arguments is invalid.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-property-box-set-state" role="function" condition="deprecated:">
+<title>gnome_property_box_set_state ()</title>
+<indexterm zone="gnome-property-box-set-state" role="deprecated"><primary sortas="gnome_property_box_set_state">gnome_property_box_set_state</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_property_box_set_state        (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *property_box,
+                                                         <link linkend="gboolean">gboolean</link> state);</programlisting>
+<warning><para><literal>gnome_property_box_set_state</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+An alias for  <link linkend="gnome-property-box-set-modified"><function>gnome_property_box_set_modified()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>property_box</parameter>&#160;:</term>
+<listitem><simpara> The GnomePropertyBox that contains the changed data
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>state</parameter>&#160;:</term>
+<listitem><simpara> The state. <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> means modified, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> means unmodified.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+<refsect1 id="GnomePropertyBox.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GnomePropertyBox-apply" role="signal"><title>The <literal>&quot;apply&quot;</literal> signal</title>
+<indexterm zone="GnomePropertyBox-apply"><primary sortas="GnomePropertyBox::apply">GnomePropertyBox::apply</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *propertybox,
+                                                        <link linkend="gint">gint</link>              arg1,
+                                                        <link linkend="gpointer">gpointer</link>          user_data)        : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>propertybox</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>the notebook page number which emitted the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomePropertyBox-help" role="signal"><title>The <literal>&quot;help&quot;</literal> signal</title>
+<indexterm zone="GnomePropertyBox-help"><primary sortas="GnomePropertyBox::help">GnomePropertyBox::help</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomePropertyBox">GnomePropertyBox</link> *propertybox,
+                                                        <link linkend="gint">gint</link>              arg1,
+                                                        <link linkend="gpointer">gpointer</link>          user_data)        : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>propertybox</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>the notebook page number which emitted the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

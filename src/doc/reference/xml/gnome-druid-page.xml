@@ -1,0 +1,263 @@
+<refentry id="GnomeDruidPage">
+<refmeta>
+<refentrytitle role="top_of_page" id="GnomeDruidPage.top_of_page">GnomeDruidPage</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeDruidPage</refname>
+<refpurpose>A widget representing a single page inside a druid.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GnomeDruidPage.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+                    <link linkend="GnomeDruidPage-struct">GnomeDruidPage</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-druid-page-new">gnome_druid_page_new</link>                (void);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-druid-page-next">gnome_druid_page_next</link>               (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-prepare">gnome_druid_page_prepare</link>            (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-druid-page-back">gnome_druid_page_back</link>               (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-druid-page-cancel">gnome_druid_page_cancel</link>             (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);
+<link linkend="void">void</link>                <link linkend="gnome-druid-page-finish">gnome_druid_page_finish</link>             (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GnomeDruidPage.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----GnomeDruidPage
+                                       +----<link linkend="GnomeDruidPageEdge">GnomeDruidPageEdge</link>
+                                       +----<link linkend="GnomeDruidPageStandard">GnomeDruidPageStandard</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GnomeDruidPage.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GnomeDruidPage implements
+ <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="AtkImplementorIface">AtkImplementorIface</link>.</para>
+</refsect1>
+
+
+
+<refsect1 id="GnomeDruidPage.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GnomeDruidPage-back">back</link>&quot;                                           : Run Last
+  &quot;<link linkend="GnomeDruidPage-cancel">cancel</link>&quot;                                         : Run Last
+  &quot;<link linkend="GnomeDruidPage-finish">finish</link>&quot;                                         : Run Last
+  &quot;<link linkend="GnomeDruidPage-next">next</link>&quot;                                           : Run Last
+  &quot;<link linkend="GnomeDruidPage-prepare">prepare</link>&quot;                                        : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GnomeDruidPage.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The functions in this page are mostly only for the information of developers --
+they should never need to call them directly. Typically, a druid will connect
+to the various signals described here as a way of controlling the behaviour of
+druids that do not just proceed in a front-to-back fashion (for example, where
+the subsequent pages depend upon the choice made at some point).
+</para>
+</refsect1>
+
+<refsect1 id="GnomeDruidPage.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomeDruidPage-struct" role="struct">
+<title>GnomeDruidPage</title>
+<indexterm zone="GnomeDruidPage-struct" role="deprecated"><primary sortas="GnomeDruidPage">GnomeDruidPage</primary></indexterm><programlisting>typedef struct _GnomeDruidPage GnomeDruidPage;</programlisting>
+<warning><para><literal>GnomeDruidPage</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+The widget for a aprticular page in a druid.
+</para></refsect2>
+<refsect2 id="gnome-druid-page-new" role="function" condition="deprecated:">
+<title>gnome_druid_page_new ()</title>
+<indexterm zone="gnome-druid-page-new" role="deprecated"><primary sortas="gnome_druid_page_new">gnome_druid_page_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_druid_page_new                (void);</programlisting>
+<warning><para><literal>gnome_druid_page_new</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Creates a new <link linkend="GnomeDruidPage"><type>GnomeDruidPage</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The newly created <link linkend="GnomeDruidPage"><type>GnomeDruidPage</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-next" role="function" condition="deprecated:">
+<title>gnome_druid_page_next ()</title>
+<indexterm zone="gnome-druid-page-next" role="deprecated"><primary sortas="gnome_druid_page_next">gnome_druid_page_next</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_druid_page_next               (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);</programlisting>
+<warning><para><literal>gnome_druid_page_next</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This will emit the "next" signal for that particular page.  It
+is called by gnome-druid exclusively.  It is expected that non-linear Druid's
+will override this signal and return TRUE if it handles changing pages.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page</parameter>&#160;:</term>
+<listitem><simpara> A DruidPage widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> This function will return FALSE by default.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-prepare" role="function" condition="deprecated:">
+<title>gnome_druid_page_prepare ()</title>
+<indexterm zone="gnome-druid-page-prepare" role="deprecated"><primary sortas="gnome_druid_page_prepare">gnome_druid_page_prepare</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_prepare            (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);</programlisting>
+<warning><para><literal>gnome_druid_page_prepare</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This emits the "prepare" signal for the page.  It is called by
+gnome-druid exclusively. This function is called immediately prior to a druid
+page being shown so that it can "prepare" for display.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page</parameter>&#160;:</term>
+<listitem><simpara> A DruidPage widget.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-back" role="function" condition="deprecated:">
+<title>gnome_druid_page_back ()</title>
+<indexterm zone="gnome-druid-page-back" role="deprecated"><primary sortas="gnome_druid_page_back">gnome_druid_page_back</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_druid_page_back               (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);</programlisting>
+<warning><para><literal>gnome_druid_page_back</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This will emit the "back" signal for that particular page.  It
+is called by gnome-druid exclusively.  It is expected that non-linear Druid's
+will override this signal and return TRUE if it handles changing pages.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page</parameter>&#160;:</term>
+<listitem><simpara> A DruidPage widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> This function will return FALSE by default.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-cancel" role="function" condition="deprecated:">
+<title>gnome_druid_page_cancel ()</title>
+<indexterm zone="gnome-druid-page-cancel" role="deprecated"><primary sortas="gnome_druid_page_cancel">gnome_druid_page_cancel</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_druid_page_cancel             (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);</programlisting>
+<warning><para><literal>gnome_druid_page_cancel</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This will emit the "cancel" signal for that particular page.  It
+is called by gnome-druid exclusively.  It is expected that a Druid will
+override this signal and return TRUE if it does not want to exit.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page</parameter>&#160;:</term>
+<listitem><simpara> A DruidPage widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> This function will return FALSE by default.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-druid-page-finish" role="function" condition="deprecated:">
+<title>gnome_druid_page_finish ()</title>
+<indexterm zone="gnome-druid-page-finish" role="deprecated"><primary sortas="gnome_druid_page_finish">gnome_druid_page_finish</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_druid_page_finish             (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druid_page);</programlisting>
+<warning><para><literal>gnome_druid_page_finish</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This emits the "finish" signal for the page.  It is called by
+gnome-druid exclusively.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druid_page</parameter>&#160;:</term>
+<listitem><simpara> A DruidPage widget.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+<refsect1 id="GnomeDruidPage.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GnomeDruidPage-back" role="signal"><title>The <literal>&quot;back&quot;</literal> signal</title>
+<indexterm zone="GnomeDruidPage-back"><primary sortas="GnomeDruidPage::back">GnomeDruidPage::back</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            user_function                      (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druidpage,
+                                                        <link linkend="GtkWidget">GtkWidget</link>      *widget,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druidpage</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>The <link linkend="GnomeDruid"><type>GnomeDruid</type></link> containg this page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if the signal handler has changed the page (since this stops
+all further emission of the signal), <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeDruidPage-cancel" role="signal"><title>The <literal>&quot;cancel&quot;</literal> signal</title>
+<indexterm zone="GnomeDruidPage-cancel"><primary sortas="GnomeDruidPage::cancel">GnomeDruidPage::cancel</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            user_function                      (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druidpage,
+                                                        <link linkend="GtkWidget">GtkWidget</link>      *widget,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druidpage</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>The <link linkend="GnomeDruid"><type>GnomeDruid</type></link> containg this page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if the druid does not want to exit yet, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if the exit
+should continue.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeDruidPage-finish" role="signal"><title>The <literal>&quot;finish&quot;</literal> signal</title>
+<indexterm zone="GnomeDruidPage-finish"><primary sortas="GnomeDruidPage::finish">GnomeDruidPage::finish</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druidpage,
+                                                        <link linkend="GtkWidget">GtkWidget</link>      *widget,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druidpage</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>The <link linkend="GnomeDruid"><type>GnomeDruid</type></link> containg this page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeDruidPage-next" role="signal"><title>The <literal>&quot;next&quot;</literal> signal</title>
+<indexterm zone="GnomeDruidPage-next"><primary sortas="GnomeDruidPage::next">GnomeDruidPage::next</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            user_function                      (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druidpage,
+                                                        <link linkend="GtkWidget">GtkWidget</link>      *widget,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druidpage</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>The <link linkend="GnomeDruid"><type>GnomeDruid</type></link> containg this page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if the signal handler has changed the page (since this stops
+all further emission of the signal), <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GnomeDruidPage-prepare" role="signal"><title>The <literal>&quot;prepare&quot;</literal> signal</title>
+<indexterm zone="GnomeDruidPage-prepare"><primary sortas="GnomeDruidPage::prepare">GnomeDruidPage::prepare</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GnomeDruidPage">GnomeDruidPage</link> *druidpage,
+                                                        <link linkend="GtkWidget">GtkWidget</link>      *widget,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>druidpage</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>The <link linkend="GnomeDruid"><type>GnomeDruid</type></link> containg this page.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

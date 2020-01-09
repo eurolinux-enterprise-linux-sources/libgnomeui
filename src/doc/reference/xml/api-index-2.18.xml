@@ -1,0 +1,8 @@
+<indexdiv>
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="gnome-password-dialog-get-new-password"><link linkend="gnome-password-dialog-get-new-password">gnome_password_dialog_get_new_password</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-set-password-quality-func"><link linkend="gnome-password-dialog-set-password-quality-func">gnome_password_dialog_set_password_quality_func</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-set-show-new-password"><link linkend="gnome-password-dialog-set-show-new-password">gnome_password_dialog_set_show_new_password</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gnome-password-dialog-set-show-new-password-quality"><link linkend="gnome-password-dialog-set-show-new-password-quality">gnome_password_dialog_set_show_new_password_quality</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

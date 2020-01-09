@@ -1,0 +1,338 @@
+<refentry id="GnomeScores">
+<refmeta>
+<refentrytitle role="top_of_page" id="GnomeScores.top_of_page">GnomeScores</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeScores</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GnomeScores.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+                    <link linkend="GnomeScores-struct">GnomeScores</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gnome-scores-display-with-pixmap">gnome_scores_display_with_pixmap</link>    (const <link linkend="gchar">gchar</link> *pixmap_logo,
+                                                         const <link linkend="gchar">gchar</link> *app_name,
+                                                         const <link linkend="gchar">gchar</link> *level,
+                                                         <link linkend="int">int</link> pos);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gnome-scores-new">gnome_scores_new</link>                    (<link linkend="guint">guint</link> n_scores,
+                                                         <link linkend="gchar">gchar</link> **names,
+                                                         <link linkend="gfloat">gfloat</link> *scores,
+                                                         <link linkend="time-t">time_t</link> *times,
+                                                         <link linkend="gboolean">gboolean</link> clear);
+<link linkend="void">void</link>                <link linkend="gnome-scores-construct">gnome_scores_construct</link>              (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="guint">guint</link> n_scores,
+                                                         <link linkend="gchar">gchar</link> **names,
+                                                         <link linkend="gfloat">gfloat</link> *scores,
+                                                         <link linkend="time-t">time_t</link> *times,
+                                                         <link linkend="gboolean">gboolean</link> clear);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-logo-label">gnome_scores_set_logo_label</link>         (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         const <link linkend="gchar">gchar</link> *txt,
+                                                         const <link linkend="gchar">gchar</link> *font,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-logo-pixmap">gnome_scores_set_logo_pixmap</link>        (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         const <link linkend="gchar">gchar</link> *pix_name);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-logo-widget">gnome_scores_set_logo_widget</link>        (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *w);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-color">gnome_scores_set_color</link>              (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="guint">guint</link> n,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-def-color">gnome_scores_set_def_color</link>          (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-colors">gnome_scores_set_colors</link>             (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-logo-label-title">gnome_scores_set_logo_label_title</link>   (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         const <link linkend="gchar">gchar</link> *txt);
+<link linkend="void">void</link>                <link linkend="gnome-scores-set-current-player">gnome_scores_set_current_player</link>     (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="gint">gint</link> i);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GnomeScores.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkWindow">GtkWindow</link>
+                                       +----<link linkend="GtkDialog">GtkDialog</link>
+                                             +----GnomeScores
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GnomeScores.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GnomeScores implements
+ <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="AtkImplementorIface">AtkImplementorIface</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GnomeScores.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GnomeScores.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomeScores-struct" role="struct">
+<title>GnomeScores</title>
+<indexterm zone="GnomeScores-struct" role="deprecated"><primary sortas="GnomeScores">GnomeScores</primary></indexterm><programlisting>typedef struct _GnomeScores GnomeScores;</programlisting>
+<warning><para><literal>GnomeScores</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-scores-display-with-pixmap" role="function" condition="deprecated:">
+<title>gnome_scores_display_with_pixmap ()</title>
+<indexterm zone="gnome-scores-display-with-pixmap" role="deprecated"><primary sortas="gnome_scores_display_with_pixmap">gnome_scores_display_with_pixmap</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gnome_scores_display_with_pixmap    (const <link linkend="gchar">gchar</link> *pixmap_logo,
+                                                         const <link linkend="gchar">gchar</link> *app_name,
+                                                         const <link linkend="gchar">gchar</link> *level,
+                                                         <link linkend="int">int</link> pos);</programlisting>
+<warning><para><literal>gnome_scores_display_with_pixmap</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Does all the work of displaying the best scores.
+It calls gnome_score_get_notables to retrieve the info, creates the window,
+and show it.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixmap_logo</parameter>&#160;:</term>
+<listitem><simpara> Filename of a logo pixmap to display
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>app_name</parameter>&#160;:</term>
+<listitem><simpara> Name of the application, as in gnome_score_init.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>level</parameter>&#160;:</term>
+<listitem><simpara> Level of the game or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pos</parameter>&#160;:</term>
+<listitem><simpara> Position in the top ten of the current player, as returned by gnome_score_log.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>  If a dialog is displayed return it's pointer.  It can also
+be <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no dialog is displayed
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-new" role="function" condition="deprecated:">
+<title>gnome_scores_new ()</title>
+<indexterm zone="gnome-scores-new" role="deprecated"><primary sortas="gnome_scores_new">gnome_scores_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gnome_scores_new                    (<link linkend="guint">guint</link> n_scores,
+                                                         <link linkend="gchar">gchar</link> **names,
+                                                         <link linkend="gfloat">gfloat</link> *scores,
+                                                         <link linkend="time-t">time_t</link> *times,
+                                                         <link linkend="gboolean">gboolean</link> clear);</programlisting>
+<warning><para><literal>gnome_scores_new</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Creates the high-scores window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>n_scores</parameter>&#160;:</term>
+<listitem><simpara> Number of positions.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>names</parameter>&#160;:</term>
+<listitem><simpara> Names of the players.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>scores</parameter>&#160;:</term>
+<listitem><simpara> Scores
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>times</parameter>&#160;:</term>
+<listitem><simpara> Time in which the scores were done
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>clear</parameter>&#160;:</term>
+<listitem><simpara> Add a "Clear" Button?
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-construct" role="function" condition="deprecated:">
+<title>gnome_scores_construct ()</title>
+<indexterm zone="gnome-scores-construct" role="deprecated"><primary sortas="gnome_scores_construct">gnome_scores_construct</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_construct              (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="guint">guint</link> n_scores,
+                                                         <link linkend="gchar">gchar</link> **names,
+                                                         <link linkend="gfloat">gfloat</link> *scores,
+                                                         <link linkend="time-t">time_t</link> *times,
+                                                         <link linkend="gboolean">gboolean</link> clear);</programlisting>
+<warning><para><literal>gnome_scores_construct</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+useful for language bindings and subclassing, not to be used by
+itself, see <link linkend="gnome-scores-new"><type>gnome_scores_new</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_scores</parameter>&#160;:</term>
+<listitem><simpara> Number of positions.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>names</parameter>&#160;:</term>
+<listitem><simpara> Names of the players.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>scores</parameter>&#160;:</term>
+<listitem><simpara> Scores
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>times</parameter>&#160;:</term>
+<listitem><simpara> Time in which the scores were done
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>clear</parameter>&#160;:</term>
+<listitem><simpara> Add a "Clear" Button?
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-logo-label" role="function" condition="deprecated:">
+<title>gnome_scores_set_logo_label ()</title>
+<indexterm zone="gnome-scores-set-logo-label" role="deprecated"><primary sortas="gnome_scores_set_logo_label">gnome_scores_set_logo_label</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_logo_label         (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         const <link linkend="gchar">gchar</link> *txt,
+                                                         const <link linkend="gchar">gchar</link> *font,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);</programlisting>
+<warning><para><literal>gnome_scores_set_logo_label</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Creates a label to be the logo</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>txt</parameter>&#160;:</term>
+<listitem><simpara> Text in the label.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>font</parameter>&#160;:</term>
+<listitem><simpara> Font to use in the label.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>col</parameter>&#160;:</term>
+<listitem><simpara> Color to use in the label.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-logo-pixmap" role="function" condition="deprecated:">
+<title>gnome_scores_set_logo_pixmap ()</title>
+<indexterm zone="gnome-scores-set-logo-pixmap" role="deprecated"><primary sortas="gnome_scores_set_logo_pixmap">gnome_scores_set_logo_pixmap</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_logo_pixmap        (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         const <link linkend="gchar">gchar</link> *pix_name);</programlisting>
+<warning><para><literal>gnome_scores_set_logo_pixmap</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the logo on the scores dialog box to a pixmap</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pix_name</parameter>&#160;:</term>
+<listitem><simpara> filename of a pixmap
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-logo-widget" role="function" condition="deprecated:">
+<title>gnome_scores_set_logo_widget ()</title>
+<indexterm zone="gnome-scores-set-logo-widget" role="deprecated"><primary sortas="gnome_scores_set_logo_widget">gnome_scores_set_logo_widget</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_logo_widget        (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *w);</programlisting>
+<warning><para><literal>gnome_scores_set_logo_widget</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Set an arbitrary widget to be the logo.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>w</parameter>&#160;:</term>
+<listitem><simpara> Widget to be used as logo.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-color" role="function" condition="deprecated:">
+<title>gnome_scores_set_color ()</title>
+<indexterm zone="gnome-scores-set-color" role="deprecated"><primary sortas="gnome_scores_set_color">gnome_scores_set_color</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_color              (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="guint">guint</link> n,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);</programlisting>
+<warning><para><literal>gnome_scores_set_color</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Set the color of one entry.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n</parameter>&#160;:</term>
+<listitem><simpara> Entry to be changed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>col</parameter>&#160;:</term>
+<listitem><simpara> Color.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-def-color" role="function" condition="deprecated:">
+<title>gnome_scores_set_def_color ()</title>
+<indexterm zone="gnome-scores-set-def-color" role="deprecated"><primary sortas="gnome_scores_set_def_color">gnome_scores_set_def_color</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_def_color          (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);</programlisting>
+<warning><para><literal>gnome_scores_set_def_color</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Set the default color of the entries.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>col</parameter>&#160;:</term>
+<listitem><simpara> Color
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-colors" role="function" condition="deprecated:">
+<title>gnome_scores_set_colors ()</title>
+<indexterm zone="gnome-scores-set-colors" role="deprecated"><primary sortas="gnome_scores_set_colors">gnome_scores_set_colors</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_colors             (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="GdkColor">GdkColor</link> *col);</programlisting>
+<warning><para><literal>gnome_scores_set_colors</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Set the color of all the entries.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>col</parameter>&#160;:</term>
+<listitem><simpara> Array of colors.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-logo-label-title" role="function" condition="deprecated:">
+<title>gnome_scores_set_logo_label_title ()</title>
+<indexterm zone="gnome-scores-set-logo-label-title" role="deprecated"><primary sortas="gnome_scores_set_logo_label_title">gnome_scores_set_logo_label_title</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_logo_label_title   (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         const <link linkend="gchar">gchar</link> *txt);</programlisting>
+<warning><para><literal>gnome_scores_set_logo_label_title</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Creates a label to be the logo</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>txt</parameter>&#160;:</term>
+<listitem><simpara> Name of the logo.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-scores-set-current-player" role="function" condition="deprecated:">
+<title>gnome_scores_set_current_player ()</title>
+<indexterm zone="gnome-scores-set-current-player" role="deprecated"><primary sortas="gnome_scores_set_current_player">gnome_scores_set_current_player</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_scores_set_current_player     (<link linkend="GnomeScores">GnomeScores</link> *gs,
+                                                         <link linkend="gint">gint</link> i);</programlisting>
+<warning><para><literal>gnome_scores_set_current_player</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Set the index of the current player in top ten.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gs</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeScores"><type>GnomeScores</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>i</parameter>&#160;:</term>
+<listitem><simpara> Index of the current(from 0 to 9).
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

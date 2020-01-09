@@ -1,0 +1,380 @@
+<refentry id="libgnomeui-GnomeThemeFile">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgnomeui-GnomeThemeFile.top_of_page">GnomeThemeFile</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGNOMEUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GnomeThemeFile</refname>
+<refpurpose>APIs to  parse icon theme files.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgnomeui-GnomeThemeFile.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libgnomeui/libgnomeui.h&gt;
+
+                    <link linkend="GnomeThemeFile">GnomeThemeFile</link>;
+<link linkend="void">void</link>                (<link linkend="GnomeThemeFileSectionFunc">*GnomeThemeFileSectionFunc</link>)        (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *name,
+                                                         <link linkend="gpointer">gpointer</link> data);
+enum                <link linkend="GnomeThemeFileParseError">GnomeThemeFileParseError</link>;
+<link linkend="void">void</link>                (<link linkend="GnomeThemeFileLineFunc">*GnomeThemeFileLineFunc</link>)           (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *key,
+                                                         const <link linkend="char">char</link> *locale,
+                                                         const <link linkend="char">char</link> *value,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GnomeThemeFile">GnomeThemeFile</link> *    <link linkend="gnome-theme-file-new-from-string">gnome_theme_file_new_from_string</link>    (<link linkend="char">char</link> *data,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="char">char</link> *              <link linkend="gnome-theme-file-to-string">gnome_theme_file_to_string</link>          (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df);
+<link linkend="void">void</link>                <link linkend="gnome-theme-file-free">gnome_theme_file_free</link>               (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df);
+<link linkend="void">void</link>                <link linkend="gnome-theme-file-foreach-section">gnome_theme_file_foreach_section</link>    (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         <link linkend="GnomeThemeFileSectionFunc">GnomeThemeFileSectionFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="gnome-theme-file-foreach-key">gnome_theme_file_foreach_key</link>        (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         <link linkend="gboolean">gboolean</link> include_localized,
+                                                         <link linkend="GnomeThemeFileLineFunc">GnomeThemeFileLineFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-theme-file-get-raw">gnome_theme_file_get_raw</link>            (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         const <link linkend="char">char</link> *locale,
+                                                         <link linkend="char">char</link> **val);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-theme-file-get-integer">gnome_theme_file_get_integer</link>        (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         <link linkend="int">int</link> *val);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-theme-file-get-string">gnome_theme_file_get_string</link>         (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         <link linkend="char">char</link> **val);
+<link linkend="gboolean">gboolean</link>            <link linkend="gnome-theme-file-get-locale-string">gnome_theme_file_get_locale_string</link>  (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         <link linkend="char">char</link> **val);
+#define             <link linkend="GNOME-THEME-FILE-PARSE-ERROR--CAPS">GNOME_THEME_FILE_PARSE_ERROR</link>
+<link linkend="GQuark">GQuark</link>              <link linkend="gnome-theme-file-parse-error-quark">gnome_theme_file_parse_error_quark</link>  (void);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgnomeui-GnomeThemeFile.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgnomeui-GnomeThemeFile.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GnomeThemeFile" role="struct" condition="deprecated:">
+<title>GnomeThemeFile</title>
+<indexterm zone="GnomeThemeFile" role="deprecated"><primary sortas="GnomeThemeFile">GnomeThemeFile</primary></indexterm><programlisting>typedef struct _GnomeThemeFile GnomeThemeFile;</programlisting>
+<warning><para><literal>GnomeThemeFile</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+A GnomeThemeFile contains information about the number of sections, pointers to the sections
+and information about the current locale.
+</para></refsect2>
+<refsect2 id="GnomeThemeFileSectionFunc" role="function" condition="deprecated:">
+<title>GnomeThemeFileSectionFunc ()</title>
+<indexterm zone="GnomeThemeFileSectionFunc" role="deprecated"><primary sortas="GnomeThemeFileSectionFunc">GnomeThemeFileSectionFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GnomeThemeFileSectionFunc)        (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *name,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>GnomeThemeFileSectionFunc</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GnomeThemeFileParseError" role="enum" condition="deprecated:">
+<title>enum GnomeThemeFileParseError</title>
+<indexterm zone="GnomeThemeFileParseError" role="deprecated"><primary sortas="GnomeThemeFileParseError">GnomeThemeFileParseError</primary></indexterm><programlisting>typedef enum 
+{
+  GNOME_THEME_FILE_PARSE_ERROR_INVALID_SYNTAX,
+  GNOME_THEME_FILE_PARSE_ERROR_INVALID_ESCAPES,
+  GNOME_THEME_FILE_PARSE_ERROR_INVALID_CHARS
+} GnomeThemeFileParseError;
+</programlisting>
+<warning><para><literal>GnomeThemeFileParseError</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="GnomeThemeFileLineFunc" role="function" condition="deprecated:">
+<title>GnomeThemeFileLineFunc ()</title>
+<indexterm zone="GnomeThemeFileLineFunc" role="deprecated"><primary sortas="GnomeThemeFileLineFunc">GnomeThemeFileLineFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GnomeThemeFileLineFunc)           (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *key,
+                                                         const <link linkend="char">char</link> *locale,
+                                                         const <link linkend="char">char</link> *value,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<warning><para><literal>GnomeThemeFileLineFunc</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>locale</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gnome-theme-file-new-from-string" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_new_from_string ()</title>
+<indexterm zone="gnome-theme-file-new-from-string" role="deprecated"><primary sortas="gnome_theme_file_new_from_string">gnome_theme_file_new_from_string</primary></indexterm><indexterm zone="gnome-theme-file-new-from-string" role="2.2"><primary sortas="gnome_theme_file_new_from_string">gnome_theme_file_new_from_string</primary></indexterm><programlisting><link linkend="GnomeThemeFile">GnomeThemeFile</link> *    gnome_theme_file_new_from_string    (<link linkend="char">char</link> *data,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<warning><para><literal>gnome_theme_file_new_from_string</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Creates a <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link> from the data string passed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>  the string used to create a <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> location to store the error occuring, or NULL to ignore errors 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-to-string" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_to_string ()</title>
+<indexterm zone="gnome-theme-file-to-string" role="deprecated"><primary sortas="gnome_theme_file_to_string">gnome_theme_file_to_string</primary></indexterm><indexterm zone="gnome-theme-file-to-string" role="2.2"><primary sortas="gnome_theme_file_to_string">gnome_theme_file_to_string</primary></indexterm><programlisting><link linkend="char">char</link> *              gnome_theme_file_to_string          (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df);</programlisting>
+<warning><para><literal>gnome_theme_file_to_string</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This function retrieves the string representing the <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a char *.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-free" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_free ()</title>
+<indexterm zone="gnome-theme-file-free" role="deprecated"><primary sortas="gnome_theme_file_free">gnome_theme_file_free</primary></indexterm><indexterm zone="gnome-theme-file-free" role="2.2"><primary sortas="gnome_theme_file_free">gnome_theme_file_free</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_theme_file_free               (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df);</programlisting>
+<warning><para><literal>gnome_theme_file_free</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Frees the <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link> structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-foreach-section" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_foreach_section ()</title>
+<indexterm zone="gnome-theme-file-foreach-section" role="deprecated"><primary sortas="gnome_theme_file_foreach_section">gnome_theme_file_foreach_section</primary></indexterm><indexterm zone="gnome-theme-file-foreach-section" role="2.2"><primary sortas="gnome_theme_file_foreach_section">gnome_theme_file_foreach_section</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_theme_file_foreach_section    (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         <link linkend="GnomeThemeFileSectionFunc">GnomeThemeFileSectionFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<warning><para><literal>gnome_theme_file_foreach_section</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Calls <parameter>func</parameter> for each section in the <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link> with <parameter>user_data</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GnomeThemeFileSectionFunc"><type>GnomeThemeFileSectionFunc</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to the user data.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-foreach-key" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_foreach_key ()</title>
+<indexterm zone="gnome-theme-file-foreach-key" role="deprecated"><primary sortas="gnome_theme_file_foreach_key">gnome_theme_file_foreach_key</primary></indexterm><indexterm zone="gnome-theme-file-foreach-key" role="2.2"><primary sortas="gnome_theme_file_foreach_key">gnome_theme_file_foreach_key</primary></indexterm><programlisting><link linkend="void">void</link>                gnome_theme_file_foreach_key        (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         <link linkend="gboolean">gboolean</link> include_localized,
+                                                         <link linkend="GnomeThemeFileLineFunc">GnomeThemeFileLineFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<warning><para><literal>gnome_theme_file_foreach_key</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Looks for the section <parameter>section_name</parameter>. If found, this function calls <parameter>func</parameter> for each line 
+in the section with fields of line and <parameter>user_data</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>section</parameter>&#160;:</term>
+<listitem><simpara> name of the section
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>include_localized</parameter>&#160;:</term>
+<listitem><simpara> a boolean value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GnomeThemeFileLineFunc"><type>GnomeThemeFileLineFunc</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to user_data.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-get-raw" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_get_raw ()</title>
+<indexterm zone="gnome-theme-file-get-raw" role="deprecated"><primary sortas="gnome_theme_file_get_raw">gnome_theme_file_get_raw</primary></indexterm><indexterm zone="gnome-theme-file-get-raw" role="2.2"><primary sortas="gnome_theme_file_get_raw">gnome_theme_file_get_raw</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_theme_file_get_raw            (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         const <link linkend="char">char</link> *locale,
+                                                         <link linkend="char">char</link> **val);</programlisting>
+<warning><para><literal>gnome_theme_file_get_raw</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Searches section name and line in the <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link> data structure.
+If found, sets the <parameter>val</parameter> to value field in GnomeThemeFileLine and returns a boolean value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>. 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>section</parameter>&#160;:</term>
+<listitem><simpara> the string representing the section name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyname</parameter>&#160;:</term>
+<listitem><simpara> the string representing the key name.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>locale</parameter>&#160;:</term>
+<listitem><simpara> the string representing the locale. 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>val</parameter>&#160;:</term>
+<listitem><simpara> a char**. 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if section and line were found in the <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>, FALSE otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-get-integer" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_get_integer ()</title>
+<indexterm zone="gnome-theme-file-get-integer" role="deprecated"><primary sortas="gnome_theme_file_get_integer">gnome_theme_file_get_integer</primary></indexterm><indexterm zone="gnome-theme-file-get-integer" role="2.2"><primary sortas="gnome_theme_file_get_integer">gnome_theme_file_get_integer</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_theme_file_get_integer        (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         <link linkend="int">int</link> *val);</programlisting>
+<warning><para><literal>gnome_theme_file_get_integer</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This function calls <link linkend="gnome-theme-file-get-raw"><function>gnome_theme_file_get_raw()</function></link> with the parameters. If gnome_theme_file_get_raw returns
+<link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, then converts the value string filled in by the function to an integer and writes it in <parameter>val</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>section</parameter>&#160;:</term>
+<listitem><simpara> the section name.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyname</parameter>&#160;:</term>
+<listitem><simpara> the key name.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>val</parameter>&#160;:</term>
+<listitem><simpara> an int*.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if gnome_theme_file_get_raw returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise. 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-get-string" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_get_string ()</title>
+<indexterm zone="gnome-theme-file-get-string" role="deprecated"><primary sortas="gnome_theme_file_get_string">gnome_theme_file_get_string</primary></indexterm><indexterm zone="gnome-theme-file-get-string" role="2.2"><primary sortas="gnome_theme_file_get_string">gnome_theme_file_get_string</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_theme_file_get_string         (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         <link linkend="char">char</link> **val);</programlisting>
+<warning><para><literal>gnome_theme_file_get_string</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This function calls <link linkend="gnome-theme-file-get-raw"><function>gnome_theme_file_get_raw()</function></link> with the parameters and returns the 
+boolean value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>section</parameter>&#160;:</term>
+<listitem><simpara> the section name. 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyname</parameter>&#160;:</term>
+<listitem><simpara> the key name.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>val</parameter>&#160;:</term>
+<listitem><simpara> a char**.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="gboolean"><type>gboolean</type></link> value.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gnome-theme-file-get-locale-string" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_get_locale_string ()</title>
+<indexterm zone="gnome-theme-file-get-locale-string" role="deprecated"><primary sortas="gnome_theme_file_get_locale_string">gnome_theme_file_get_locale_string</primary></indexterm><indexterm zone="gnome-theme-file-get-locale-string" role="2.2"><primary sortas="gnome_theme_file_get_locale_string">gnome_theme_file_get_locale_string</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gnome_theme_file_get_locale_string  (<link linkend="GnomeThemeFile">GnomeThemeFile</link> *df,
+                                                         const <link linkend="char">char</link> *section,
+                                                         const <link linkend="char">char</link> *keyname,
+                                                         <link linkend="char">char</link> **val);</programlisting>
+<warning><para><literal>gnome_theme_file_get_locale_string</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Calculates the locale if the current_locale field of <parameter>df</parameter> is NULL. Then calls <link linkend="gnome-theme-file-get-raw"><function>gnome_theme_file_get_raw()</function></link> with the 
+parameters and returns the boolean value obtained.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>df</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GnomeThemeFile"><type>GnomeThemeFile</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>section</parameter>&#160;:</term>
+<listitem><simpara> the section name.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyname</parameter>&#160;:</term>
+<listitem><simpara> the keyname.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>val</parameter>&#160;:</term>
+<listitem><simpara> a char **.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a gboolean value.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GNOME-THEME-FILE-PARSE-ERROR--CAPS" role="macro" condition="deprecated:">
+<title>GNOME_THEME_FILE_PARSE_ERROR</title>
+<indexterm zone="GNOME-THEME-FILE-PARSE-ERROR--CAPS" role="deprecated"><primary sortas="GNOME_THEME_FILE_PARSE_ERROR">GNOME_THEME_FILE_PARSE_ERROR</primary></indexterm><programlisting>#define GNOME_THEME_FILE_PARSE_ERROR gnome_theme_file_parse_error_quark()
+</programlisting>
+<warning><para><literal>GNOME_THEME_FILE_PARSE_ERROR</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="gnome-theme-file-parse-error-quark" role="function" condition="deprecated:|since:2.2">
+<title>gnome_theme_file_parse_error_quark ()</title>
+<indexterm zone="gnome-theme-file-parse-error-quark" role="deprecated"><primary sortas="gnome_theme_file_parse_error_quark">gnome_theme_file_parse_error_quark</primary></indexterm><indexterm zone="gnome-theme-file-parse-error-quark" role="2.2"><primary sortas="gnome_theme_file_parse_error_quark">gnome_theme_file_parse_error_quark</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              gnome_theme_file_parse_error_quark  (void);</programlisting>
+<warning><para><literal>gnome_theme_file_parse_error_quark</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This function gets  a <link linkend="GQuark"><type>GQuark</type></link> representing the error string.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GQuark"><type>GQuark</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>
