@@ -3,7 +3,7 @@
 Summary: GNOME base GUI library
 Name: libgnomeui
 Version: 2.24.5
-Release: 6%{?dist}
+Release: 8%{?dist}
 URL: http://www.gnome.org
 Source0: http://download.gnome.org/sources/libgnomeui/2.24/%{name}-%{version}.tar.bz2
 
@@ -98,6 +98,12 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_includedir}/*
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2.24.5-8
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.24.5-7
+- Mass rebuild 2013-12-27
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.24.5-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
